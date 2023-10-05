@@ -11,6 +11,8 @@
 		F013F3BE2ACE96FB00423AFF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F013F3BD2ACE96FB00423AFF /* ContentView.swift */; };
 		F013F3C02ACE96FE00423AFF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F013F3BF2ACE96FE00423AFF /* Assets.xcassets */; };
 		F013F3C32ACE96FE00423AFF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F013F3C22ACE96FE00423AFF /* Preview Assets.xcassets */; };
+		F013F4182ACF025900423AFF /* RoundCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = F013F4172ACF025900423AFF /* RoundCorner.swift */; };
+		F013F41A2ACF054F00423AFF /* Tyler.docc in Sources */ = {isa = PBXBuildFile; fileRef = F013F4192ACF054F00423AFF /* Tyler.docc */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,8 @@
 		F013F3BD2ACE96FB00423AFF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		F013F3BF2ACE96FE00423AFF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F013F3C22ACE96FE00423AFF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		F013F4172ACF025900423AFF /* RoundCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundCorner.swift; sourceTree = "<group>"; };
+		F013F4192ACF054F00423AFF /* Tyler.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = Tyler.docc; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +57,8 @@
 			children = (
 				F013F3BB2ACE96FB00423AFF /* TylerApp.swift */,
 				F013F3BD2ACE96FB00423AFF /* ContentView.swift */,
+				F013F4172ACF025900423AFF /* RoundCorner.swift */,
+				F013F4192ACF054F00423AFF /* Tyler.docc */,
 				F013F3BF2ACE96FE00423AFF /* Assets.xcassets */,
 				F013F3C12ACE96FE00423AFF /* Preview Content */,
 			);
@@ -138,7 +144,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				F013F3BE2ACE96FB00423AFF /* ContentView.swift in Sources */,
+				F013F41A2ACF054F00423AFF /* Tyler.docc in Sources */,
 				F013F3BC2ACE96FB00423AFF /* TylerApp.swift in Sources */,
+				F013F4182ACF025900423AFF /* RoundCorner.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
