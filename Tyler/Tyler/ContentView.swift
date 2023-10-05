@@ -21,6 +21,7 @@ struct ContentView: View {
                         RoundCornerView()
                     }
                     NavigationLink("Hero Animation") {
+                        HeroAnimationView()
                     }
                 }
             }

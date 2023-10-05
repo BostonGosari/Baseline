@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F001E6562ACF23E60002F665 /* HeroAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F001E6552ACF23E60002F665 /* HeroAnimationView.swift */; };
 		F013F3BC2ACE96FB00423AFF /* TylerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F013F3BB2ACE96FB00423AFF /* TylerApp.swift */; };
 		F013F3BE2ACE96FB00423AFF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F013F3BD2ACE96FB00423AFF /* ContentView.swift */; };
 		F013F3C02ACE96FE00423AFF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F013F3BF2ACE96FE00423AFF /* Assets.xcassets */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F001E6552ACF23E60002F665 /* HeroAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroAnimationView.swift; sourceTree = "<group>"; };
 		F013F3B82ACE96FB00423AFF /* Tyler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tyler.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F013F3BB2ACE96FB00423AFF /* TylerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TylerApp.swift; sourceTree = "<group>"; };
 		F013F3BD2ACE96FB00423AFF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -38,6 +40,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F001E6542ACF23D60002F665 /* HeroAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				F001E6552ACF23E60002F665 /* HeroAnimationView.swift */,
+			);
+			path = HeroAnimation;
+			sourceTree = "<group>";
+		};
 		F013F3AF2ACE96FB00423AFF = {
 			isa = PBXGroup;
 			children = (
@@ -59,6 +69,7 @@
 			children = (
 				F013F3BB2ACE96FB00423AFF /* TylerApp.swift */,
 				F013F3BD2ACE96FB00423AFF /* ContentView.swift */,
+				F001E6542ACF23D60002F665 /* HeroAnimation */,
 				F013F41B2ACF1E3B00423AFF /* RoundCorner */,
 				F013F4192ACF054F00423AFF /* Tyler.docc */,
 				F013F3BF2ACE96FE00423AFF /* Assets.xcassets */,
@@ -156,6 +167,7 @@
 			files = (
 				F013F3BE2ACE96FB00423AFF /* ContentView.swift in Sources */,
 				F013F41A2ACF054F00423AFF /* Tyler.docc in Sources */,
+				F001E6562ACF23E60002F665 /* HeroAnimationView.swift in Sources */,
 				F013F3BC2ACE96FB00423AFF /* TylerApp.swift in Sources */,
 				F013F4182ACF025900423AFF /* RoundCorner.swift in Sources */,
 				F013F41D2ACF1E4D00423AFF /* RoundCornerView.swift in Sources */,
