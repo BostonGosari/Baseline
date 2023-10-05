@@ -13,6 +13,7 @@
 		F013F3C32ACE96FE00423AFF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F013F3C22ACE96FE00423AFF /* Preview Assets.xcassets */; };
 		F013F4182ACF025900423AFF /* RoundCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = F013F4172ACF025900423AFF /* RoundCorner.swift */; };
 		F013F41A2ACF054F00423AFF /* Tyler.docc in Sources */ = {isa = PBXBuildFile; fileRef = F013F4192ACF054F00423AFF /* Tyler.docc */; };
+		F013F41D2ACF1E4D00423AFF /* RoundCornerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F013F41C2ACF1E4D00423AFF /* RoundCornerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		F013F3C22ACE96FE00423AFF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F013F4172ACF025900423AFF /* RoundCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundCorner.swift; sourceTree = "<group>"; };
 		F013F4192ACF054F00423AFF /* Tyler.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = Tyler.docc; sourceTree = "<group>"; };
+		F013F41C2ACF1E4D00423AFF /* RoundCornerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundCornerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,7 +59,7 @@
 			children = (
 				F013F3BB2ACE96FB00423AFF /* TylerApp.swift */,
 				F013F3BD2ACE96FB00423AFF /* ContentView.swift */,
-				F013F4172ACF025900423AFF /* RoundCorner.swift */,
+				F013F41B2ACF1E3B00423AFF /* RoundCorner */,
 				F013F4192ACF054F00423AFF /* Tyler.docc */,
 				F013F3BF2ACE96FE00423AFF /* Assets.xcassets */,
 				F013F3C12ACE96FE00423AFF /* Preview Content */,
@@ -71,6 +73,15 @@
 				F013F3C22ACE96FE00423AFF /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		F013F41B2ACF1E3B00423AFF /* RoundCorner */ = {
+			isa = PBXGroup;
+			children = (
+				F013F4172ACF025900423AFF /* RoundCorner.swift */,
+				F013F41C2ACF1E4D00423AFF /* RoundCornerView.swift */,
+			);
+			path = RoundCorner;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -147,6 +158,7 @@
 				F013F41A2ACF054F00423AFF /* Tyler.docc in Sources */,
 				F013F3BC2ACE96FB00423AFF /* TylerApp.swift in Sources */,
 				F013F4182ACF025900423AFF /* RoundCorner.swift in Sources */,
+				F013F41D2ACF1E4D00423AFF /* RoundCornerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,6 +293,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Tyler/Preview Content\"";
 				DEVELOPMENT_TEAM = 77745NX67K;
+				DOCC_HOSTING_BASE_PATH = Baseline;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -288,6 +301,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -310,6 +324,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Tyler/Preview Content\"";
 				DEVELOPMENT_TEAM = 77745NX67K;
+				DOCC_HOSTING_BASE_PATH = Baseline;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -317,6 +332,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
