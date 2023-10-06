@@ -11,37 +11,68 @@ struct MapDetailView: View {
     
     var namespace: Namespace.ID
     @Binding var isShow: Bool
+    
     @State var appear = [false, false, false]
     @State var viewState: CGSize = .zero
+    @State var scale = 0.0
     @State var isDraggable = true
+    @State private var scrollViewOffset: CGFloat = 0
     
     var body: some View {
         ScrollView {
-            MapImage
-                .overlay {
-                    CloseButton
-                        .opacity(appear[0] ? 1 : 0)
+            ZStack {
+                Color.clear
+                    .onScrollViewOffsetChanged { value in
+                        if viewState.width == 0 {
+                            scrollViewOffset = value
+                            if scrollViewOffset > 5 {
+                                scale = scrollViewOffset
+                                
+                                if scrollViewOffset > 40 {
+                                    scale = 40
+                                    isShow = false
+                                }
+                            } else {
+                                scale = 0
+                            }
+                        }
+                    }
+                    
+                VStack {
+                    MapImage
+                        .overlay {
+                            CardContent
+                        }
+                    MapDetail
+                        .opacity(appear[2] ? 1 : 0)
                 }
-                .overlay {
-                    CardContent
+                .mask(RoundedRectangle(cornerRadius: scale / 3, style: .continuous))
+                .shadow(color: .black.opacity(0.3), radius: 30, x: 0, y: 10)
+                .scaleEffect(scale / -600 + 1)
+                .background(.black.opacity(scale / 500))
+                .background(.ultraThinMaterial)
+                .gesture(isDraggable ? drag : nil)
+                .ignoresSafeArea()
+                
+                VStack {
+                    Text("\(scrollViewOffset)")
+                    Text("\(viewState.width)")
+                    Text("\(viewState.height)")
                 }
-            MapDetail
-                .opacity(appear[2] ? 1 : 0)
+            }
         }
+        .overlay {
+            CloseButton
+                .opacity(appear[0] ? 1 : 0)
+        }
+        .statusBarHidden()
+        .ignoresSafeArea(edges: .top)
         .onAppear {
             fadeIn()
         }
         .onChange(of: isShow) { newValue in
             fadeOut()
         }
-        .mask(RoundedRectangle(cornerRadius: viewState.width / 3, style: .continuous))
-        .shadow(color: .black.opacity(0.3), radius: 30, x: 0, y: 10)
-        .scaleEffect(viewState.width / -600 + 1)
-        .background(.black.opacity(viewState.width / 500))
-        .background(.ultraThinMaterial)
-        .gesture(isDraggable ? drag : nil)
-        .ignoresSafeArea(edges: .top)
-        .statusBarHidden()
     }
     
     var CardContent: some View {
@@ -96,14 +127,25 @@ struct MapDetailView: View {
         } label: {
             Image(systemName: "xmark.circle.fill")
                 .font(.title)
-                .foregroundStyle(.ultraThinMaterial)
+                .foregroundStyle(scale > 15 ? .clear : scrollViewOffset < -200 ? .black : .gray)
         }
+        .animation(.easeInOut, value: scrollViewOffset)
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topTrailing)
         .padding(30)
     }
     
     var MapDetail: some View {
         VStack(alignment: .leading, spacing: 10) {
+            Text("난이도 상, 골목길 가파름")
+                .font(.title3)
+                .bold()
+            Text("안녕하세요 어쩌구 하이 고래 귀엽\n마리오 슈퍼마리오 스파게티")
+            Text("안녕하세요 어쩌구 하이 고래 귀엽\n마리오 슈퍼마리오 스파게티")
+            Text("난이도 상, 골목길 가파름")
+                .font(.title3)
+                .bold()
+            Text("안녕하세요 어쩌구 하이 고래 귀엽\n마리오 슈퍼마리오 스파게티")
+            Text("안녕하세요 어쩌구 하이 고래 귀엽\n마리오 슈퍼마리오 스파게티")
             Text("난이도 상, 골목길 가파름")
                 .font(.title3)
                 .bold()
@@ -116,25 +158,39 @@ struct MapDetailView: View {
     }
     
     var drag: some Gesture {
-        DragGesture(minimumDistance: 30, coordinateSpace: .local)
+        DragGesture(minimumDistance: 20, coordinateSpace: .local)
             .onChanged { value in
-                guard value.translation.width > 0 else { return }
-                if value.startLocation.x < 100 {
-                    withAnimation {
-                        viewState = value.translation
+                if value.translation.width > 0 {
+                    if value.startLocation.x < 100  {
+                        withAnimation {
+                            viewState = value.translation
+                            scale = viewState.width
+                        }
+                        
+                        if scale > 100 {
+                            isShow = false
+                        }
                     }
-                }
-                
-                if viewState.width > 100 {
-                    close()
+                } else {
+                    if value.startLocation.x > 300  {
+                        withAnimation {
+                            viewState = value.translation
+                            scale = -viewState.width
+                        }
+                        
+                        if scale > 100 {
+                            isShow = false
+                        }
+                    }
                 }
             }
             .onEnded { value in
-                if viewState.width > 80 {
-                    close()
+                if scale > 80 {
+                    isShow = false
                 } else {
                     withAnimation {
                         viewState = .zero
+                        scale = 0.0
                     }
                 }
             }
@@ -165,6 +221,29 @@ struct MapDetailView: View {
         }
         
         isDraggable = false
+    }
+}
+
+struct ScrollViewOffsetPreferenceKey: PreferenceKey {
+    static var defaultValue: CGFloat = 0
+    
+    static func reduce(value: inout CGFloat, nextValue: () -> CGFloat) {
+        value = nextValue()
+    }
+}
+
+extension View {
+    func onScrollViewOffsetChanged(action: @escaping (_ offset: CGFloat) -> Void) -> some View {
+        self
+            .background(
+                GeometryReader {geo in
+                    Text("")
+                        .preference(key: ScrollViewOffsetPreferenceKey.self, value: geo.frame(in: .global).minY)
+                }
+            )
+            .onPreferenceChange(ScrollViewOffsetPreferenceKey.self) { value in
+                action(value)
+            }
     }
 }
 
