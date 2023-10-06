@@ -21,22 +21,16 @@ struct HeroAnimationView: View {
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding(.leading, 20)
                 if !isShow {
-                    MapCard(namespace: namespace, isShow: $isShow)
+                    CardView(namespace: namespace, isShow: $isShow)
                 }
                 Rectangle()
                     .foregroundStyle(.clear)
             }
             
             if isShow {
-                MapDetailView(namespace: namespace, isShow: $isShow)
-                    .zIndex(1)
-//                    .transition(
-//                        .asymmetric(
-//                            insertion: .opacity.animation(.easeInOut(duration: 0.1)),
-//                            removal: .opacity.animation(.easeInOut(duration: 0.3))
-//                        )
-//                    )
+                CardDetailView(namespace: namespace, isShow: $isShow)
             }
+            
         }
     }
 }

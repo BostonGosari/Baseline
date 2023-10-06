@@ -7,15 +7,14 @@
 
 import SwiftUI
 
-struct MapDetailView: View {
+struct CardDetailView: View {
     
     var namespace: Namespace.ID
     @Binding var isShow: Bool
     
     @State var appear = [false, false, false]
-    @State var viewState: CGSize = .zero
+    @State var dragState: CGSize = .zero
     @State var scale = 0.0
-    @State var isDraggable = true
     @State private var scrollViewOffset: CGFloat = 0
     
     var body: some View {
@@ -23,14 +22,16 @@ struct MapDetailView: View {
             ZStack {
                 Color.clear
                     .onScrollViewOffsetChanged { value in
-                        if viewState.width == 0 {
+                        if dragState.width == 0 {
                             scrollViewOffset = value
                             if scrollViewOffset > 5 {
                                 scale = scrollViewOffset
                                 
                                 if scrollViewOffset > 40 {
-                                    scale = 40
-                                    isShow = false
+                                        scale = 40
+                                    withAnimation(.closeCard) {
+                                        isShow = false
+                                    }
                                 }
                             } else {
                                 scale = 0
@@ -47,17 +48,14 @@ struct MapDetailView: View {
                         .opacity(appear[2] ? 1 : 0)
                 }
                 .mask(RoundedRectangle(cornerRadius: scale / 3, style: .continuous))
-                .shadow(color: .black.opacity(0.3), radius: 30, x: 0, y: 10)
                 .scaleEffect(scale / -600 + 1)
-                .background(.black.opacity(scale / 500))
-                .background(.ultraThinMaterial)
-                .gesture(isDraggable ? drag : nil)
+                .gesture(drag)
                 .ignoresSafeArea()
                 
                 VStack {
                     Text("\(scrollViewOffset)")
-                    Text("\(viewState.width)")
-                    Text("\(viewState.height)")
+                    Text("\(dragState.width)")
+                    Text("\(dragState.height)")
                 }
             }
         }
@@ -109,12 +107,9 @@ struct MapDetailView: View {
     }
     
     var MapImage: some View {
-        Image("MapExample")
+        Image("MapSample")
             .resizable()
             .scaledToFit()
-            .overlay {
-                Color.black.opacity(0.7)
-            }
             .roundedCorner(radius: 40, corners: [.bottomLeft, .bottomRight])
             .matchedGeometryEffect(id: "background", in: namespace)
     }
@@ -122,7 +117,7 @@ struct MapDetailView: View {
     var CloseButton: some View {
         Button {
             withAnimation(.closeCard) {
-                isShow.toggle()
+                isShow = false
             }
         } label: {
             Image(systemName: "xmark.circle.fill")
@@ -141,16 +136,6 @@ struct MapDetailView: View {
                 .bold()
             Text("안녕하세요 어쩌구 하이 고래 귀엽\n마리오 슈퍼마리오 스파게티")
             Text("안녕하세요 어쩌구 하이 고래 귀엽\n마리오 슈퍼마리오 스파게티")
-            Text("난이도 상, 골목길 가파름")
-                .font(.title3)
-                .bold()
-            Text("안녕하세요 어쩌구 하이 고래 귀엽\n마리오 슈퍼마리오 스파게티")
-            Text("안녕하세요 어쩌구 하이 고래 귀엽\n마리오 슈퍼마리오 스파게티")
-            Text("난이도 상, 골목길 가파름")
-                .font(.title3)
-                .bold()
-            Text("안녕하세요 어쩌구 하이 고래 귀엽\n마리오 슈퍼마리오 스파게티")
-            Text("안녕하세요 어쩌구 하이 고래 귀엽\n마리오 슈퍼마리오 스파게티")
         }
         .frame(maxWidth: .infinity, alignment: .leading)
         .padding(.top)
@@ -161,35 +146,42 @@ struct MapDetailView: View {
         DragGesture(minimumDistance: 20, coordinateSpace: .local)
             .onChanged { value in
                 if value.translation.width > 0 {
-                    if value.startLocation.x < 100  {
+                    if value.startLocation.x < 60  {
                         withAnimation {
-                            viewState = value.translation
-                            scale = viewState.width
+                            dragState = value.translation
+                            scale = dragState.width
                         }
                         
-                        if scale > 100 {
-                            isShow = false
+                        if scale > 60 {
+                            withAnimation(.closeCard) {
+                                isShow = false
+                            }
                         }
                     }
                 } else {
                     if value.startLocation.x > 300  {
                         withAnimation {
-                            viewState = value.translation
-                            scale = -viewState.width
+                            dragState = value.translation
+                            scale = -dragState.width
                         }
                         
-                        if scale > 100 {
-                            isShow = false
+                        if scale > 60 {
+                            withAnimation(.closeCard) {
+                                isShow = false
+                            }
                         }
                     }
                 }
             }
             .onEnded { value in
-                if scale > 80 {
-                    isShow = false
+                if scale > 60 {
+                    withAnimation(.closeCard) {
+                        isShow = false
+                        scale = 0
+                    }
                 } else {
                     withAnimation {
-                        viewState = .zero
+                        dragState = .zero
                         scale = 0.0
                     }
                 }
@@ -212,15 +204,6 @@ struct MapDetailView: View {
         appear[0] = false
         appear[1] = false
         appear[2] = false
-    }
-    
-    func close() {
-        withAnimation(.closeCard) {
-            viewState = .zero
-            isShow.toggle()
-        }
-        
-        isDraggable = false
     }
 }
 

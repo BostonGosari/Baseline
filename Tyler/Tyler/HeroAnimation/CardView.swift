@@ -1,5 +1,5 @@
 //
-//  MapCard.swift
+//  CardView.swift
 //  Tyler
 //
 //  Created by Hyunjun Kim on 10/6/23.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct MapCard: View {
+struct CardView: View {
     var namespace: Namespace.ID
     @Binding var isShow: Bool
     
@@ -17,12 +17,9 @@ struct MapCard: View {
                 isShow.toggle()
             }
         } label: {
-            Image("MapExample")
+            Image("MapSample")
                 .resizable()
                 .scaledToFit()
-                .overlay {
-                    Color.black.opacity(0.7)
-                }
                 .roundedCorner(radius: 30, corners: [.topRight, .bottomLeft, .bottomRight])
                 .matchedGeometryEffect(id: "background", in: namespace)
             
@@ -42,9 +39,9 @@ struct MapCard: View {
                     .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
                     .padding(30)
                 }
-                .padding(.horizontal, 20)
         }
         .buttonStyle(CardButton())
+        .padding(.horizontal, 20)
     }
 }
 
