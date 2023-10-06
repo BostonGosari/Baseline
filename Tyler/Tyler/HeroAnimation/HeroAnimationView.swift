@@ -30,12 +30,12 @@ struct HeroAnimationView: View {
             if isShow {
                 MapDetailView(namespace: namespace, isShow: $isShow)
                     .zIndex(1)
-                    .transition(
-                        .asymmetric(
-                            insertion: .opacity.animation(.easeInOut(duration: 0.1)),
-                            removal: .opacity.animation(.easeInOut(duration: 0.3).delay(0.2))
-                        )
-                    )
+//                    .transition(
+//                        .asymmetric(
+//                            insertion: .opacity.animation(.easeInOut(duration: 0.1)),
+//                            removal: .opacity.animation(.easeInOut(duration: 0.3))
+//                        )
+//                    )
             }
         }
     }
