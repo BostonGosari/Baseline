@@ -9,24 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        NavigationStack {
-            List {
-                Section("Map") {
-                    NavigationLink("MapKit") {
-                        
-                    }
-                }
-                Section("디저트") {
-                    NavigationLink("Rounded Corner") {
-                        RoundCornerView()
-                    }
-                    NavigationLink("Hero Animation") {
-                        HeroAnimationView()
-                    }
-                }
-            }
-            .navigationTitle("기능 구현")
-        }
+        HeroAnimationView()
     }
 }
 

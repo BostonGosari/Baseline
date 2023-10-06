@@ -8,32 +8,36 @@
 import SwiftUI
 
 struct HeroAnimationView: View {
+    
+    @Namespace var namespace
+    @State private var isShow = false
+    
     var body: some View {
-        ScrollView {
-            ZStack {
-                Image("MapExample")
-                    .resizable()
-                    .scaledToFit()
-                    .overlay {
-                        Color.black.opacity(0.7)
-                    }
-                    .roundedCorner(radius: 40, corners: [.topRight, .bottomLeft, .bottomRight])
-                VStack(alignment: .leading, spacing: 10) {
-                    Text("오리런")
-                        .font(.title)
-                        .bold()
-                    HStack {
-                        Image(systemName: "map.fill")
-                        Text("건국대학교")
-                    }
+        ZStack {
+            ScrollView {
+                Text("OUTLINE")
+                    .font(.title)
+                    .bold()
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(.leading, 20)
+                if !isShow {
+                    MapCard(namespace: namespace, isShow: $isShow)
                 }
-                .foregroundStyle(.white)
-                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
-                .padding(30)
+                Rectangle()
+                    .foregroundStyle(.clear)
             }
-            .padding(.horizontal, 20)
+            
+            if isShow {
+                MapDetailView(namespace: namespace, isShow: $isShow)
+                    .zIndex(1)
+                    .transition(
+                        .asymmetric(
+                            insertion: .opacity.animation(.easeInOut(duration: 0.1)),
+                            removal: .opacity.animation(.easeInOut(duration: 0.3).delay(0.2))
+                        )
+                    )
+            }
         }
-        .navigationTitle("Hero Animation")
     }
 }
 
