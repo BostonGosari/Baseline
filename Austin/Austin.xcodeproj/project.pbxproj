@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		95C2DE5A2AD134DF00600202 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C2DE592AD134DF00600202 /* LoginView.swift */; };
 		F013F3D62ACE973500423AFF /* AustinApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F013F3D52ACE973500423AFF /* AustinApp.swift */; };
 		F013F3D82ACE973500423AFF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F013F3D72ACE973500423AFF /* ContentView.swift */; };
 		F013F3DA2ACE973600423AFF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F013F3D92ACE973600423AFF /* Assets.xcassets */; };
@@ -14,6 +15,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		95C2DE592AD134DF00600202 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		F013F3D22ACE973500423AFF /* Austin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Austin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F013F3D52ACE973500423AFF /* AustinApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AustinApp.swift; sourceTree = "<group>"; };
 		F013F3D72ACE973500423AFF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -32,6 +34,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		95C2DE552AD1349B00600202 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F013F3D92ACE973600423AFF /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		95C2DE562AD134A500600202 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				F013F3D52ACE973500423AFF /* AustinApp.swift */,
+				F013F3D72ACE973500423AFF /* ContentView.swift */,
+				95C2DE582AD134B900600202 /* Login */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		95C2DE572AD134B300600202 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				95C2DE592AD134DF00600202 /* LoginView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		95C2DE582AD134B900600202 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				95C2DE572AD134B300600202 /* View */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
 		F013F3C92ACE973500423AFF = {
 			isa = PBXGroup;
 			children = (
@@ -51,9 +87,8 @@
 		F013F3D42ACE973500423AFF /* Austin */ = {
 			isa = PBXGroup;
 			children = (
-				F013F3D52ACE973500423AFF /* AustinApp.swift */,
-				F013F3D72ACE973500423AFF /* ContentView.swift */,
-				F013F3D92ACE973600423AFF /* Assets.xcassets */,
+				95C2DE562AD134A500600202 /* Sources */,
+				95C2DE552AD1349B00600202 /* Resources */,
 				F013F3DB2ACE973600423AFF /* Preview Content */,
 			);
 			path = Austin;
@@ -137,6 +172,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95C2DE5A2AD134DF00600202 /* LoginView.swift in Sources */,
 				F013F3D82ACE973500423AFF /* ContentView.swift in Sources */,
 				F013F3D62ACE973500423AFF /* AustinApp.swift in Sources */,
 			);
