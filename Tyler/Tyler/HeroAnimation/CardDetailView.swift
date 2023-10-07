@@ -12,9 +12,9 @@ struct CardDetailView: View {
     var namespace: Namespace.ID
     @Binding var isShow: Bool
     
-    @State var appear = [false, false, false]
-    @State var dragState: CGSize = .zero
-    @State var scale = 0.0
+    @State private var appear = [false, false, false]
+    @State private var dragState: CGSize = .zero
+    @State private var viewSize = 0.0
     @State private var scrollViewOffset: CGFloat = 0
     
     var body: some View {
@@ -22,58 +22,48 @@ struct CardDetailView: View {
             ZStack {
                 Color.clear
                     .onScrollViewOffsetChanged { value in
-                        if dragState.width == 0 {
-                            scrollViewOffset = value
-                            if scrollViewOffset > 5 {
-                                scale = scrollViewOffset
-                                
-                                if scrollViewOffset > 40 {
-                                        scale = 40
-                                    withAnimation(.closeCard) {
-                                        isShow = false
-                                    }
-                                }
-                            } else {
-                                scale = 0
-                            }
-                        }
+                        handleScrollViewOffset(value)
                     }
-                    
-                VStack {
-                    MapImage
-                        .overlay {
-                            CardContent
-                        }
-                    MapDetail
-                        .opacity(appear[2] ? 1 : 0)
-                }
-                .mask(RoundedRectangle(cornerRadius: scale / 3, style: .continuous))
-                .scaleEffect(scale / -600 + 1)
-                .gesture(drag)
-                .ignoresSafeArea()
                 
                 VStack {
-                    Text("\(scrollViewOffset)")
-                    Text("\(dragState.width)")
-                    Text("\(dragState.height)")
+                    ZStack {
+                        mapImage
+                        mapInformation
+                    }
+                    detailInformation
                 }
+                .mask(RoundedRectangle(cornerRadius: viewSize / 3, style: .continuous))
+                .scaleEffect(viewSize / -600 + 1)
+                .gesture(drag)
+            }
+            .onChange(of: isShow) { newValue in
+                fadeOut()
+            }
+            .onAppear {
+                fadeIn()
             }
         }
         .overlay {
-            CloseButton
-                .opacity(appear[0] ? 1 : 0)
+            closeButton
         }
-        .statusBarHidden()
         .ignoresSafeArea(edges: .top)
-        .onAppear {
-            fadeIn()
-        }
-        .onChange(of: isShow) { newValue in
-            fadeOut()
-        }
+        .statusBarHidden()
+    }
+}
+
+extension CardDetailView {
+    
+    // MARK: View Components
+    
+    private var mapImage: some View {
+        Image("MapSample")
+            .resizable()
+            .scaledToFit()
+            .roundedCorner(radius: 40, corners: [.bottomLeft, .bottomRight])
+            .matchedGeometryEffect(id: "map", in: namespace)
     }
     
-    var CardContent: some View {
+    private var mapInformation: some View {
         VStack(alignment: .leading) {
             VStack(alignment: .leading, spacing: 10) {
                 Text("오리런")
@@ -87,7 +77,9 @@ struct CardDetailView: View {
                 .matchedGeometryEffect(id: "subtitle", in: namespace)
             }
             .padding(.top, 20)
+            
             Spacer()
+            
             Button {
                 //action
             } label: {
@@ -100,21 +92,14 @@ struct CardDetailView: View {
                     }
             }
             .opacity(appear[1] ? 1 : 0)
+            .offset(y: appear[1] ? 0 : 10)
             .padding(-10)
         }
         .foregroundStyle(.white)
         .padding(40)
     }
     
-    var MapImage: some View {
-        Image("MapSample")
-            .resizable()
-            .scaledToFit()
-            .roundedCorner(radius: 40, corners: [.bottomLeft, .bottomRight])
-            .matchedGeometryEffect(id: "background", in: namespace)
-    }
-    
-    var CloseButton: some View {
+    var closeButton: some View {
         Button {
             withAnimation(.closeCard) {
                 isShow = false
@@ -122,25 +107,52 @@ struct CardDetailView: View {
         } label: {
             Image(systemName: "xmark.circle.fill")
                 .font(.title)
-                .foregroundStyle(scale > 15 ? .clear : scrollViewOffset < -200 ? .black : .gray)
+                .foregroundStyle(viewSize > 15 ? .clear : scrollViewOffset < -200 ? .black : .gray)
         }
         .animation(.easeInOut, value: scrollViewOffset)
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topTrailing)
         .padding(30)
+        .opacity(appear[0] ? 1 : 0)
+        .offset(y: appear[0] ? 0 : 10)
     }
     
-    var MapDetail: some View {
+    var detailInformation: some View {
         VStack(alignment: .leading, spacing: 10) {
             Text("난이도 상, 골목길 가파름")
                 .font(.title3)
                 .bold()
             Text("안녕하세요 어쩌구 하이 고래 귀엽\n마리오 슈퍼마리오 스파게티")
-            Text("안녕하세요 어쩌구 하이 고래 귀엽\n마리오 슈퍼마리오 스파게티")
+            
+            Divider()
+            Text("뷰에 사용되는 값들")
+                .font(.title3)
+                .bold()
+            HStack {
+                VStack(alignment: .leading) {
+                    Text("viewSize")
+                    Text("scrollViewOffset")
+                    Text("dragState.width")
+                }
+                .font(.headline)
+                Spacer()
+                VStack(alignment: .trailing) {
+                    Text("\(viewSize)")
+                    Text("\(scrollViewOffset)")
+                    Text("\(dragState.width)")
+                }
+            }
         }
+        .opacity(appear[2] ? 1 : 0)
+        .offset(y: appear[2] ? 0 : 10)
         .frame(maxWidth: .infinity, alignment: .leading)
         .padding(.top)
         .padding(.horizontal, 40)
     }
+}
+
+extension CardDetailView {
+    
+    // MARK: Drag Gesture
     
     var drag: some Gesture {
         DragGesture(minimumDistance: 20, coordinateSpace: .local)
@@ -149,12 +161,13 @@ struct CardDetailView: View {
                     if value.startLocation.x < 60  {
                         withAnimation {
                             dragState = value.translation
-                            scale = dragState.width
+                            viewSize = dragState.width
                         }
                         
-                        if scale > 60 {
+                        if viewSize > 60 {
                             withAnimation(.closeCard) {
                                 isShow = false
+                                dragState = .zero
                             }
                         }
                     }
@@ -162,71 +175,74 @@ struct CardDetailView: View {
                     if value.startLocation.x > 300  {
                         withAnimation {
                             dragState = value.translation
-                            scale = -dragState.width
+                            viewSize = -dragState.width
                         }
                         
-                        if scale > 60 {
+                        if viewSize > 60 {
                             withAnimation(.closeCard) {
                                 isShow = false
+                                dragState = .zero
                             }
                         }
                     }
                 }
             }
             .onEnded { value in
-                if scale > 60 {
+                if viewSize > 60 {
                     withAnimation(.closeCard) {
                         isShow = false
-                        scale = 0
+                        viewSize = 0.0
                     }
                 } else {
                     withAnimation {
                         dragState = .zero
-                        scale = 0.0
+                        viewSize = 0.0
                     }
                 }
             }
     }
+}
+
+extension CardDetailView {
     
-    func fadeIn() {
+    // MARK: View Functions
+
+    private func fadeIn() {
         withAnimation(.easeOut.delay(0.3)) {
             appear[0] = true
         }
-        withAnimation(.easeOut.delay(0.4)) {
+        withAnimation(.easeOut.delay(0.45)) {
             appear[1] = true
         }
-        withAnimation(.easeOut.delay(0.5)) {
+        withAnimation(.easeOut.delay(0.6)) {
             appear[2] = true
         }
     }
     
-    func fadeOut() {
-        appear[0] = false
-        appear[1] = false
-        appear[2] = false
+    private func fadeOut() {
+        withAnimation(.easeIn(duration: 0.1)) {
+            appear[0] = false
+            appear[1] = false
+            appear[2] = false
+        }
     }
-}
-
-struct ScrollViewOffsetPreferenceKey: PreferenceKey {
-    static var defaultValue: CGFloat = 0
     
-    static func reduce(value: inout CGFloat, nextValue: () -> CGFloat) {
-        value = nextValue()
-    }
-}
-
-extension View {
-    func onScrollViewOffsetChanged(action: @escaping (_ offset: CGFloat) -> Void) -> some View {
-        self
-            .background(
-                GeometryReader {geo in
-                    Text("")
-                        .preference(key: ScrollViewOffsetPreferenceKey.self, value: geo.frame(in: .global).minY)
+    private func handleScrollViewOffset(_ value: CGFloat) {
+        if dragState.width == 0 {
+            scrollViewOffset = value
+            
+            if scrollViewOffset > 5 {
+                viewSize = scrollViewOffset
+                
+                if scrollViewOffset > 40 {
+                    withAnimation(.closeCard) {
+                        isShow = false
+                    }
                 }
-            )
-            .onPreferenceChange(ScrollViewOffsetPreferenceKey.self) { value in
-                action(value)
+            } else {
+                viewSize = 0
             }
+        }
     }
 }
 

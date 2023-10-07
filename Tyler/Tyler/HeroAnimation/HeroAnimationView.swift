@@ -16,21 +16,30 @@ struct HeroAnimationView: View {
         ZStack {
             ScrollView {
                 Text("OUTLINE")
-                    .font(.title)
-                    .bold()
+                    .font(.largeTitle)
+                    .fontWeight(.heavy)
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding(.leading, 20)
                 if !isShow {
                     CardView(namespace: namespace, isShow: $isShow)
+                        .transition(
+                            .asymmetric(
+                                insertion: .opacity.animation(.easeInOut(duration: 0.1)),
+                                removal: .opacity.animation(.easeInOut(duration: 0.3).delay(0.2))
+                            )
+                        )
                 }
-                Rectangle()
-                    .foregroundStyle(.clear)
             }
-            
             if isShow {
                 CardDetailView(namespace: namespace, isShow: $isShow)
+                    .zIndex(1)
+                    .transition(
+                        .asymmetric(
+                            insertion: .opacity.animation(.easeInOut(duration: 0.1)),
+                            removal: .opacity.animation(.easeInOut(duration: 0.3).delay(0.2))
+                        )
+                    )
             }
-            
         }
     }
 }

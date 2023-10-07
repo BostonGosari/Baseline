@@ -12,6 +12,7 @@
 		F001E65A2ACF53F80002F665 /* CardDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F001E6592ACF53F80002F665 /* CardDetailView.swift */; };
 		F001E65D2ACF59CF0002F665 /* Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = F001E65C2ACF59CF0002F665 /* Animations.swift */; };
 		F001E65F2ACF87DA0002F665 /* ButtonStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = F001E65E2ACF87DA0002F665 /* ButtonStyles.swift */; };
+		F001E6622AD053350002F665 /* GetScrollViewOffset.swift in Sources */ = {isa = PBXBuildFile; fileRef = F001E6612AD053350002F665 /* GetScrollViewOffset.swift */; };
 		F013F3BC2ACE96FB00423AFF /* TylerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F013F3BB2ACE96FB00423AFF /* TylerApp.swift */; };
 		F013F3BE2ACE96FB00423AFF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F013F3BD2ACE96FB00423AFF /* ContentView.swift */; };
 		F013F3C02ACE96FE00423AFF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F013F3BF2ACE96FE00423AFF /* Assets.xcassets */; };
@@ -27,6 +28,7 @@
 		F001E6592ACF53F80002F665 /* CardDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailView.swift; sourceTree = "<group>"; };
 		F001E65C2ACF59CF0002F665 /* Animations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animations.swift; sourceTree = "<group>"; };
 		F001E65E2ACF87DA0002F665 /* ButtonStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyles.swift; sourceTree = "<group>"; };
+		F001E6612AD053350002F665 /* GetScrollViewOffset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetScrollViewOffset.swift; sourceTree = "<group>"; };
 		F013F3B82ACE96FB00423AFF /* Tyler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tyler.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F013F3BB2ACE96FB00423AFF /* TylerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TylerApp.swift; sourceTree = "<group>"; };
 		F013F3BD2ACE96FB00423AFF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -68,6 +70,14 @@
 			path = Style;
 			sourceTree = "<group>";
 		};
+		F001E6602AD0530F0002F665 /* ScrollViewOffset */ = {
+			isa = PBXGroup;
+			children = (
+				F001E6612AD053350002F665 /* GetScrollViewOffset.swift */,
+			);
+			path = ScrollViewOffset;
+			sourceTree = "<group>";
+		};
 		F013F3AF2ACE96FB00423AFF = {
 			isa = PBXGroup;
 			children = (
@@ -91,6 +101,7 @@
 				F013F3BD2ACE96FB00423AFF /* ContentView.swift */,
 				F001E6542ACF23D60002F665 /* HeroAnimation */,
 				F013F41B2ACF1E3B00423AFF /* RoundCorner */,
+				F001E6602AD0530F0002F665 /* ScrollViewOffset */,
 				F013F4192ACF054F00423AFF /* Tyler.docc */,
 				F013F3BF2ACE96FE00423AFF /* Assets.xcassets */,
 				F013F3C12ACE96FE00423AFF /* Preview Content */,
@@ -195,6 +206,7 @@
 				F013F4182ACF025900423AFF /* RoundCorner.swift in Sources */,
 				F001E6582ACF52660002F665 /* CardView.swift in Sources */,
 				F013F41D2ACF1E4D00423AFF /* RoundCornerView.swift in Sources */,
+				F001E6622AD053350002F665 /* GetScrollViewOffset.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
