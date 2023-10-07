@@ -13,7 +13,10 @@ import KakaoSDKAuth
 struct AustinApp: App {
     init() {
        // Kakao SDK 초기화
-       KakaoSDK.initSDK(appKey: "3ec4e9cf6844cce53ad2d4fcba1df727")
+        guard let apiKey = Bundle.main.object(forInfoDictionaryKey: "KAKAO_APP_KEY") as? String else {
+            return
+        }
+        KakaoSDK.initSDK(appKey: apiKey)
    }
     var body: some Scene {
         WindowGroup {
