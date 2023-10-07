@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		95C2DE5A2AD134DF00600202 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C2DE592AD134DF00600202 /* LoginView.swift */; };
+		95C2DE5D2AD13C4200600202 /* LoginAppleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C2DE5C2AD13C4200600202 /* LoginAppleButton.swift */; };
 		F013F3D62ACE973500423AFF /* AustinApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F013F3D52ACE973500423AFF /* AustinApp.swift */; };
 		F013F3D82ACE973500423AFF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F013F3D72ACE973500423AFF /* ContentView.swift */; };
 		F013F3DA2ACE973600423AFF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F013F3D92ACE973600423AFF /* Assets.xcassets */; };
@@ -17,6 +18,7 @@
 /* Begin PBXFileReference section */
 		95C2DE592AD134DF00600202 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		95C2DE5B2AD1396300600202 /* Austin.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Austin.entitlements; sourceTree = "<group>"; };
+		95C2DE5C2AD13C4200600202 /* LoginAppleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAppleButton.swift; sourceTree = "<group>"; };
 		F013F3D22ACE973500423AFF /* Austin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Austin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F013F3D52ACE973500423AFF /* AustinApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AustinApp.swift; sourceTree = "<group>"; };
 		F013F3D72ACE973500423AFF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -57,6 +59,7 @@
 			isa = PBXGroup;
 			children = (
 				95C2DE592AD134DF00600202 /* LoginView.swift */,
+				95C2DE5C2AD13C4200600202 /* LoginAppleButton.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -175,6 +178,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				95C2DE5A2AD134DF00600202 /* LoginView.swift in Sources */,
+				95C2DE5D2AD13C4200600202 /* LoginAppleButton.swift in Sources */,
 				F013F3D82ACE973500423AFF /* ContentView.swift in Sources */,
 				F013F3D62ACE973500423AFF /* AustinApp.swift in Sources */,
 			);
