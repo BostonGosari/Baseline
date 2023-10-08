@@ -12,11 +12,12 @@ struct RoundCornerView: View {
     var body: some View {
         ScrollView {
             Rectangle()
-                .frame(width: 100, height: 100)
+                .frame(width: 150, height: 150)
                 .foregroundStyle(.green)
-                .roundedCorner(radius: 20, corners: [.topRight, .bottomLeft, .bottomRight])
+                .roundedCorner(radius: 40, corners: [.topRight, .bottomLeft, .bottomRight])
         }
         .navigationTitle("Rounded Corner")
+        .navigationBarTitleDisplayMode(.inline)
     }
 }
 
