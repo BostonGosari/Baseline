@@ -11,6 +11,7 @@
 		F013F3BE2ACE96FB00423AFF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F013F3BD2ACE96FB00423AFF /* ContentView.swift */; };
 		F013F3C02ACE96FE00423AFF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F013F3BF2ACE96FE00423AFF /* Assets.xcassets */; };
 		F013F3C32ACE96FE00423AFF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F013F3C22ACE96FE00423AFF /* Preview Assets.xcassets */; };
+		F0CE54132AD2E3C500662E62 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0CE54122AD2E3C500662E62 /* MapView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		F013F3BD2ACE96FB00423AFF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		F013F3BF2ACE96FE00423AFF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F013F3C22ACE96FE00423AFF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		F0CE54122AD2E3C500662E62 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +55,7 @@
 			children = (
 				F013F3BB2ACE96FB00423AFF /* TylerApp.swift */,
 				F013F3BD2ACE96FB00423AFF /* ContentView.swift */,
+				F0CE54112AD2E3B600662E62 /* Map */,
 				F013F3BF2ACE96FE00423AFF /* Assets.xcassets */,
 				F013F3C12ACE96FE00423AFF /* Preview Content */,
 			);
@@ -65,6 +68,14 @@
 				F013F3C22ACE96FE00423AFF /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		F0CE54112AD2E3B600662E62 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				F0CE54122AD2E3C500662E62 /* MapView.swift */,
+			);
+			path = Map;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,6 +149,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F013F3BE2ACE96FB00423AFF /* ContentView.swift in Sources */,
+				F0CE54132AD2E3C500662E62 /* MapView.swift in Sources */,
 				F013F3BC2ACE96FB00423AFF /* TylerApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
