@@ -57,9 +57,9 @@ struct CardDetailView: View {
     }
 }
 
+// MARK: View Components
+
 extension CardDetailView {
-    
-    // MARK: View Components
     
     private var mapImage: some View {
         Image("MapSample")
@@ -105,7 +105,7 @@ extension CardDetailView {
         .padding(40)
     }
     
-    var closeButton: some View {
+    private var closeButton: some View {
         Button {
             withAnimation(.closeCard) {
                 isShow = false
@@ -122,7 +122,7 @@ extension CardDetailView {
         .offset(y: appear[0] ? 0 : fadeInOffset)
     }
     
-    var detailInformation: some View {
+    private var detailInformation: some View {
         VStack(alignment: .leading, spacing: 10) {
             Text("난이도 상, 골목길 가파름")
                 .font(.title3)
@@ -156,10 +156,10 @@ extension CardDetailView {
     }
 }
 
+// MARK: Drag Gesture
+
 extension CardDetailView {
-    
-    // MARK: Drag Gesture
-    
+        
     var drag: some Gesture {
         DragGesture(minimumDistance: 20, coordinateSpace: .local)
             .onChanged { value in
@@ -209,10 +209,10 @@ extension CardDetailView {
     }
 }
 
+// MARK: View Functions
+
 extension CardDetailView {
     
-    // MARK: View Functions
-
     private func fadeIn() {
         withAnimation(.easeOut.delay(0.3)) {
             appear[0] = true
