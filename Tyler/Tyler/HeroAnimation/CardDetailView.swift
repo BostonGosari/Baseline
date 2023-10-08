@@ -13,9 +13,15 @@ struct CardDetailView: View {
     @Binding var isShow: Bool
     
     @State private var appear = [false, false, false]
-    @State private var dragState: CGSize = .zero
     @State private var viewSize = 0.0
     @State private var scrollViewOffset: CGFloat = 0
+    @State private var dragState: CGSize = .zero
+    
+    private let fadeInOffset: CGFloat = 10
+    private let dragStartRange: CGFloat = 60
+    private let scrollStartRange: CGFloat = 5
+    private let dragLimit: CGFloat = 60
+    private let scrollLimit: CGFloat = 40
     
     var body: some View {
         ScrollView {
@@ -92,7 +98,7 @@ extension CardDetailView {
                     }
             }
             .opacity(appear[1] ? 1 : 0)
-            .offset(y: appear[1] ? 0 : 10)
+            .offset(y: appear[1] ? 0 : fadeInOffset)
             .padding(-10)
         }
         .foregroundStyle(.white)
@@ -113,7 +119,7 @@ extension CardDetailView {
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topTrailing)
         .padding(30)
         .opacity(appear[0] ? 1 : 0)
-        .offset(y: appear[0] ? 0 : 10)
+        .offset(y: appear[0] ? 0 : fadeInOffset)
     }
     
     var detailInformation: some View {
@@ -143,7 +149,7 @@ extension CardDetailView {
             }
         }
         .opacity(appear[2] ? 1 : 0)
-        .offset(y: appear[2] ? 0 : 10)
+        .offset(y: appear[2] ? 0 : fadeInOffset)
         .frame(maxWidth: .infinity, alignment: .leading)
         .padding(.top)
         .padding(.horizontal, 40)
@@ -158,13 +164,13 @@ extension CardDetailView {
         DragGesture(minimumDistance: 20, coordinateSpace: .local)
             .onChanged { value in
                 if value.translation.width > 0 {
-                    if value.startLocation.x < 60  {
+                    if value.startLocation.x < dragStartRange  {
                         withAnimation {
                             dragState = value.translation
                             viewSize = dragState.width
                         }
                         
-                        if viewSize > 60 {
+                        if viewSize > dragLimit {
                             withAnimation(.closeCard) {
                                 isShow = false
                                 dragState = .zero
@@ -172,13 +178,13 @@ extension CardDetailView {
                         }
                     }
                 } else {
-                    if value.startLocation.x > 300  {
+                    if value.startLocation.x > UIScreen.main.bounds.width - dragStartRange  {
                         withAnimation {
                             dragState = value.translation
                             viewSize = -dragState.width
                         }
                         
-                        if viewSize > 60 {
+                        if viewSize > dragLimit {
                             withAnimation(.closeCard) {
                                 isShow = false
                                 dragState = .zero
@@ -188,7 +194,7 @@ extension CardDetailView {
                 }
             }
             .onEnded { value in
-                if viewSize > 60 {
+                if viewSize > dragLimit {
                     withAnimation(.closeCard) {
                         isShow = false
                         viewSize = 0.0
@@ -231,10 +237,10 @@ extension CardDetailView {
         if dragState.width == 0 {
             scrollViewOffset = value
             
-            if scrollViewOffset > 5 {
+            if scrollViewOffset > scrollStartRange {
                 viewSize = scrollViewOffset
                 
-                if scrollViewOffset > 40 {
+                if scrollViewOffset > scrollLimit {
                     withAnimation(.closeCard) {
                         isShow = false
                     }
