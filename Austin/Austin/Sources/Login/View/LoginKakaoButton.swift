@@ -30,7 +30,9 @@ struct LoginKakaoButton: View {
                     print("login enabled")
                 }
             } label: {
-                Text("Login with Kakao")
+                Image("kakao_login_large_wide")
+                    .resizable()
+                    .frame(width : UIScreen.main.bounds.width * 0.9, height:50)
             }
         }
     }
