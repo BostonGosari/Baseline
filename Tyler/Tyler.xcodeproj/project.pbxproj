@@ -12,6 +12,9 @@
 		F013F3C02ACE96FE00423AFF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F013F3BF2ACE96FE00423AFF /* Assets.xcassets */; };
 		F013F3C32ACE96FE00423AFF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F013F3C22ACE96FE00423AFF /* Preview Assets.xcassets */; };
 		F0CE54132AD2E3C500662E62 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0CE54122AD2E3C500662E62 /* MapView.swift */; };
+		F0CE54152AD30FF700662E62 /* MapView-iOS17.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0CE54142AD30FF600662E62 /* MapView-iOS17.swift */; };
+		F0CE541B2AD33BAB00662E62 /* UIKitMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0CE541A2AD33BAB00662E62 /* UIKitMapView.swift */; };
+		F0CE541D2AD33BC100662E62 /* UIKitContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0CE541C2AD33BC100662E62 /* UIKitContentView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +24,9 @@
 		F013F3BF2ACE96FE00423AFF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F013F3C22ACE96FE00423AFF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F0CE54122AD2E3C500662E62 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		F0CE54142AD30FF600662E62 /* MapView-iOS17.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MapView-iOS17.swift"; sourceTree = "<group>"; };
+		F0CE541A2AD33BAB00662E62 /* UIKitMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKitMapView.swift; sourceTree = "<group>"; };
+		F0CE541C2AD33BC100662E62 /* UIKitContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKitContentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,8 +80,19 @@
 			isa = PBXGroup;
 			children = (
 				F0CE54122AD2E3C500662E62 /* MapView.swift */,
+				F0CE54142AD30FF600662E62 /* MapView-iOS17.swift */,
+				F0CE541E2AD33BC400662E62 /* UIKit */,
 			);
 			path = Map;
+			sourceTree = "<group>";
+		};
+		F0CE541E2AD33BC400662E62 /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				F0CE541A2AD33BAB00662E62 /* UIKitMapView.swift */,
+				F0CE541C2AD33BC100662E62 /* UIKitContentView.swift */,
+			);
+			path = UIKit;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -115,11 +132,12 @@
 			};
 			buildConfigurationList = F013F3B32ACE96FB00423AFF /* Build configuration list for PBXProject "Tyler" */;
 			compatibilityVersion = "Xcode 14.0";
-			developmentRegion = en;
+			developmentRegion = ko;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
+				ko,
 			);
 			mainGroup = F013F3AF2ACE96FB00423AFF;
 			productRefGroup = F013F3B92ACE96FB00423AFF /* Products */;
@@ -150,7 +168,10 @@
 			files = (
 				F013F3BE2ACE96FB00423AFF /* ContentView.swift in Sources */,
 				F0CE54132AD2E3C500662E62 /* MapView.swift in Sources */,
+				F0CE541B2AD33BAB00662E62 /* UIKitMapView.swift in Sources */,
+				F0CE541D2AD33BC100662E62 /* UIKitContentView.swift in Sources */,
 				F013F3BC2ACE96FB00423AFF /* TylerApp.swift in Sources */,
+				F0CE54152AD30FF700662E62 /* MapView-iOS17.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -209,7 +230,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -266,7 +287,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -287,6 +308,8 @@
 				DEVELOPMENT_TEAM = 77745NX67K;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "사용자의 위치정보를 가져오려고 합니다.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "사용자의 위치정보를 가져오려고 합니다.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -316,6 +339,8 @@
 				DEVELOPMENT_TEAM = 77745NX67K;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "사용자의 위치정보를 가져오려고 합니다.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "사용자의 위치정보를 가져오려고 합니다.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
