@@ -21,7 +21,7 @@ struct UIKitContentView: View {
     let locationManager = CLLocationManager()
     
     @State private var camera = MKMapCamera(lookingAtCenter: .duckRun, fromDistance: 1300, pitch: 0, heading: -80)
-    
+        
     @State private var annotations: [AnnotationItem] = [
         AnnotationItem(coordinate: .duckRun, title: "오리런", imageName: "duck"),
         AnnotationItem(coordinate: CLLocationCoordinate2D(latitude: 37.53958, longitude: 127.07435), title: "스타트 포인트", imageName: "startpoint")
@@ -66,6 +66,12 @@ struct UIKitContentView: View {
             .frame(height: 300)
             .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
             .padding(.horizontal, 30)
+            
+            UIKitMapUserView(lineCoordinates: lineCoordinates, annotations: annotations)
+                .frame(maxWidth: .infinity)
+                .frame(height: 300)
+                .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
+                .padding(.horizontal, 30)
         }
         .onAppear {
             locationManager.requestWhenInUseAuthorization()
