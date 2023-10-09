@@ -17,6 +17,8 @@
 		F0CE541D2AD33BC100662E62 /* UIKitContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0CE541C2AD33BC100662E62 /* UIKitContentView.swift */; };
 		F0CE54202AD394A500662E62 /* UIKitMapUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0CE541F2AD394A500662E62 /* UIKitMapUserView.swift */; };
 		F0CE54222AD3F00600662E62 /* duckRun.kml in Resources */ = {isa = PBXBuildFile; fileRef = F0CE54212AD3F00600662E62 /* duckRun.kml */; };
+		F0CE54242AD3F46900662E62 /* KMLParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0CE54232AD3F46900662E62 /* KMLParser.swift */; };
+		F0CE54262AD3FD3300662E62 /* MapAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0CE54252AD3FD3300662E62 /* MapAnimationView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +33,8 @@
 		F0CE541C2AD33BC100662E62 /* UIKitContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKitContentView.swift; sourceTree = "<group>"; };
 		F0CE541F2AD394A500662E62 /* UIKitMapUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKitMapUserView.swift; sourceTree = "<group>"; };
 		F0CE54212AD3F00600662E62 /* duckRun.kml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = duckRun.kml; sourceTree = "<group>"; };
+		F0CE54232AD3F46900662E62 /* KMLParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KMLParser.swift; sourceTree = "<group>"; };
+		F0CE54252AD3FD3300662E62 /* MapAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapAnimationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +101,8 @@
 				F0CE541C2AD33BC100662E62 /* UIKitContentView.swift */,
 				F0CE541F2AD394A500662E62 /* UIKitMapUserView.swift */,
 				F0CE54212AD3F00600662E62 /* duckRun.kml */,
+				F0CE54232AD3F46900662E62 /* KMLParser.swift */,
+				F0CE54252AD3FD3300662E62 /* MapAnimationView.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -176,9 +182,11 @@
 				F013F3BE2ACE96FB00423AFF /* ContentView.swift in Sources */,
 				F0CE54132AD2E3C500662E62 /* MapView.swift in Sources */,
 				F0CE541B2AD33BAB00662E62 /* UIKitMapView.swift in Sources */,
+				F0CE54242AD3F46900662E62 /* KMLParser.swift in Sources */,
 				F0CE54202AD394A500662E62 /* UIKitMapUserView.swift in Sources */,
 				F0CE541D2AD33BC100662E62 /* UIKitContentView.swift in Sources */,
 				F013F3BC2ACE96FB00423AFF /* TylerApp.swift in Sources */,
+				F0CE54262AD3FD3300662E62 /* MapAnimationView.swift in Sources */,
 				F0CE54152AD30FF700662E62 /* MapView-iOS17.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

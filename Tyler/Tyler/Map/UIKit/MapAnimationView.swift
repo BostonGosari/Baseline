@@ -1,5 +1,5 @@
 //
-//  MapView-UIKit.swift
+//  MapAnimationView.swift
 //  Tyler
 //
 //  Created by Hyunjun Kim on 10/9/23.
@@ -8,14 +8,16 @@
 import SwiftUI
 import MapKit
 
-struct UIKitMapView: UIViewRepresentable {
+struct MapAnimationView: UIViewRepresentable {
     
     var camera: MKMapCamera
     var coordinates: [CLLocationCoordinate2D]
     var annotations: [AnnotationItem]
+    var drawingTimer: Timer?
+    let mapView = MKMapView()
+
     
     func makeUIView(context: Context) -> MKMapView {
-        let mapView = MKMapView()
         mapView.delegate = context.coordinator
         mapView.camera = camera
         mapView.isUserInteractionEnabled = true
@@ -43,9 +45,9 @@ struct UIKitMapView: UIViewRepresentable {
     }
     
     class Coordinator: NSObject, MKMapViewDelegate {
-        var parent: UIKitMapView
+        var parent: MapAnimationView
         
-        init(_ parent: UIKitMapView) {
+        init(_ parent: MapAnimationView) {
             self.parent = parent
         }
         
@@ -109,6 +111,7 @@ struct UIKitMapView: UIViewRepresentable {
         }
     }
 }
+
 
 #Preview {
     UIKitContentView()

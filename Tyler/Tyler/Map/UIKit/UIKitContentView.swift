@@ -34,13 +34,25 @@ struct UIKitContentView: View {
         CLLocationCoordinate2D(latitude: 37.54215, longitude: 127.07750),
         CLLocationCoordinate2D(latitude: 37.53936, longitude: 127.07687),
         CLLocationCoordinate2D(latitude: 37.53958, longitude: 127.07435)
-    ];
+    ]
+    
+    @State private var coordinates: [CLLocationCoordinate2D] = {
+        if let kmlFilePath = Bundle.main.path(forResource: "duckRun", ofType: "kml") {
+            let kmlParser = KMLParser()
+            return kmlParser.parseKMLFile(atPath: kmlFilePath)
+        }
+        return []
+    }()
+    
+    @State var isMapChanged = false
+
     
     var body: some View {
         VStack {
+            Text("MapView")
             UIKitMapView(
                 camera: camera,
-                lineCoordinates: lineCoordinates, 
+                coordinates: coordinates,
                 annotations: annotations
             )
             .overlay(alignment: .bottomTrailing) {
@@ -66,8 +78,43 @@ struct UIKitContentView: View {
             .frame(height: 300)
             .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
             .padding(.horizontal, 30)
+            .overlay {
+                if isMapChanged {
+                    UIKitMapUserView(lineCoordinates: lineCoordinates)
+                        .frame(maxWidth: .infinity)
+                        .frame(height: 300)
+                        .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
+                        .padding(.horizontal, 30)
+                }
+            }
+            Button(isMapChanged ? "내위치 고정" : "전체화면") {
+                withAnimation {
+                    isMapChanged.toggle()
+                }
+            }
+            .buttonStyle(.bordered)
             
-            UIKitMapUserView(lineCoordinates: lineCoordinates, annotations: annotations)
+            Text("Map Animation")
+            MapAnimationView(camera: camera, coordinates: coordinates, annotations: annotations)
+                .overlay(alignment: .bottomTrailing) {
+                    HStack {
+                        Button {
+                            updateCamera()
+                        } label: {
+                            Image("duck")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 20)
+                                .padding(5)
+                                .background {
+                                    RoundedRectangle(cornerRadius: 5, style: .continuous)
+                                        .foregroundStyle(.yellow)
+                                        .shadow(radius: 2)
+                                }
+                        }
+                    }
+                    .padding()
+                }
                 .frame(maxWidth: .infinity)
                 .frame(height: 300)
                 .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))

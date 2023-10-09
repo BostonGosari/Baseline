@@ -10,7 +10,6 @@ import MapKit
 
 struct UIKitMapUserView: UIViewRepresentable {
     var lineCoordinates: [CLLocationCoordinate2D]
-    var annotations: [AnnotationItem]
     
     func makeUIView(context: Context) -> MKMapView {
         let mapView = MKMapView()
@@ -23,13 +22,6 @@ struct UIKitMapUserView: UIViewRepresentable {
         
         let polyline = MKPolyline(coordinates: lineCoordinates, count: lineCoordinates.count)
         mapView.addOverlay(polyline)
-        
-        for annotation in annotations {
-            let pointAnnotation = MKPointAnnotation()
-            pointAnnotation.coordinate = annotation.coordinate
-            pointAnnotation.title = annotation.title
-            mapView.addAnnotation(pointAnnotation)
-        }
         
         return mapView
     }
