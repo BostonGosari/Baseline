@@ -17,7 +17,39 @@ struct CoreDataView: View {
     ) private var people: FetchedResults<Person>
     
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            Spacer()
+                .frame(height: 50)
+            VStack {
+                ForEach(people, id: \.self) { p in
+                    HStack {
+                        Text("\(p.name ?? "defaultName")")
+                        Spacer()
+                        Text("\(p.age)")
+                    }
+                    .font(.title)
+                    .padding(.bottom, 20)
+                }
+            }
+            Spacer()
+            Button {
+                addPerson(name: "person\(people.count)", age: Int32(people.count + 20))
+            } label: {
+                Text("add person")
+                    .frame(width: 300, height: 50)
+                    .background(.yellow)
+            }
+            Button {
+                deletePerson(at: IndexSet([people.count - 1]))
+            } label: {
+                Text("delete")
+                    .frame(width: 300, height: 50)
+                    .background(.orange)
+            }
+            Spacer()
+                .frame(height: 30)
+        }
+        .padding()
     }
     
     // MARK: 이후 ViewModel로 분리 필요
