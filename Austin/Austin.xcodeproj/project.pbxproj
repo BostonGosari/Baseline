@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		95C2DE5A2AD134DF00600202 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C2DE592AD134DF00600202 /* LoginView.swift */; };
+		95C2DE5D2AD13C4200600202 /* LoginAppleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C2DE5C2AD13C4200600202 /* LoginAppleButton.swift */; };
+		95C2DE5F2AD141CC00600202 /* LoginKakaoButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C2DE5E2AD141CC00600202 /* LoginKakaoButton.swift */; };
+		95C2DE622AD1455500600202 /* KakaoSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 95C2DE612AD1455500600202 /* KakaoSDK */; };
+		95C2DE642AD1455500600202 /* KakaoSDKAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 95C2DE632AD1455500600202 /* KakaoSDKAuth */; };
+		95C2DE662AD1455500600202 /* KakaoSDKCert in Frameworks */ = {isa = PBXBuildFile; productRef = 95C2DE652AD1455500600202 /* KakaoSDKCert */; };
+		95C2DE682AD1455500600202 /* KakaoSDKCertCore in Frameworks */ = {isa = PBXBuildFile; productRef = 95C2DE672AD1455500600202 /* KakaoSDKCertCore */; };
+		95C2DE6A2AD1455500600202 /* KakaoSDKCommon in Frameworks */ = {isa = PBXBuildFile; productRef = 95C2DE692AD1455500600202 /* KakaoSDKCommon */; };
 		F013F3D62ACE973500423AFF /* AustinApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F013F3D52ACE973500423AFF /* AustinApp.swift */; };
 		F013F3D82ACE973500423AFF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F013F3D72ACE973500423AFF /* ContentView.swift */; };
 		F013F3DA2ACE973600423AFF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F013F3D92ACE973600423AFF /* Assets.xcassets */; };
@@ -14,6 +22,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		95C2DE592AD134DF00600202 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		95C2DE5B2AD1396300600202 /* Austin.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Austin.entitlements; sourceTree = "<group>"; };
+		95C2DE5C2AD13C4200600202 /* LoginAppleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAppleButton.swift; sourceTree = "<group>"; };
+		95C2DE5E2AD141CC00600202 /* LoginKakaoButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginKakaoButton.swift; sourceTree = "<group>"; };
+		95C2DE6B2AD15FDF00600202 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		95C2DE6D2AD163A800600202 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		F013F3D22ACE973500423AFF /* Austin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Austin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F013F3D52ACE973500423AFF /* AustinApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AustinApp.swift; sourceTree = "<group>"; };
 		F013F3D72ACE973500423AFF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -26,12 +40,54 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95C2DE682AD1455500600202 /* KakaoSDKCertCore in Frameworks */,
+				95C2DE662AD1455500600202 /* KakaoSDKCert in Frameworks */,
+				95C2DE622AD1455500600202 /* KakaoSDK in Frameworks */,
+				95C2DE6A2AD1455500600202 /* KakaoSDKCommon in Frameworks */,
+				95C2DE642AD1455500600202 /* KakaoSDKAuth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		95C2DE552AD1349B00600202 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F013F3D92ACE973600423AFF /* Assets.xcassets */,
+				95C2DE6D2AD163A800600202 /* Config.xcconfig */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		95C2DE562AD134A500600202 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				F013F3D52ACE973500423AFF /* AustinApp.swift */,
+				F013F3D72ACE973500423AFF /* ContentView.swift */,
+				95C2DE582AD134B900600202 /* Login */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		95C2DE572AD134B300600202 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				95C2DE592AD134DF00600202 /* LoginView.swift */,
+				95C2DE5C2AD13C4200600202 /* LoginAppleButton.swift */,
+				95C2DE5E2AD141CC00600202 /* LoginKakaoButton.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		95C2DE582AD134B900600202 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				95C2DE572AD134B300600202 /* View */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
 		F013F3C92ACE973500423AFF = {
 			isa = PBXGroup;
 			children = (
@@ -51,9 +107,10 @@
 		F013F3D42ACE973500423AFF /* Austin */ = {
 			isa = PBXGroup;
 			children = (
-				F013F3D52ACE973500423AFF /* AustinApp.swift */,
-				F013F3D72ACE973500423AFF /* ContentView.swift */,
-				F013F3D92ACE973600423AFF /* Assets.xcassets */,
+				95C2DE6B2AD15FDF00600202 /* Info.plist */,
+				95C2DE5B2AD1396300600202 /* Austin.entitlements */,
+				95C2DE562AD134A500600202 /* Sources */,
+				95C2DE552AD1349B00600202 /* Resources */,
 				F013F3DB2ACE973600423AFF /* Preview Content */,
 			);
 			path = Austin;
@@ -83,6 +140,13 @@
 			dependencies = (
 			);
 			name = Austin;
+			packageProductDependencies = (
+				95C2DE612AD1455500600202 /* KakaoSDK */,
+				95C2DE632AD1455500600202 /* KakaoSDKAuth */,
+				95C2DE652AD1455500600202 /* KakaoSDKCert */,
+				95C2DE672AD1455500600202 /* KakaoSDKCertCore */,
+				95C2DE692AD1455500600202 /* KakaoSDKCommon */,
+			);
 			productName = Austin;
 			productReference = F013F3D22ACE973500423AFF /* Austin.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +175,9 @@
 				Base,
 			);
 			mainGroup = F013F3C92ACE973500423AFF;
+			packageReferences = (
+				95C2DE602AD1455500600202 /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */,
+			);
 			productRefGroup = F013F3D32ACE973500423AFF /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -137,6 +204,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95C2DE5F2AD141CC00600202 /* LoginKakaoButton.swift in Sources */,
+				95C2DE5A2AD134DF00600202 /* LoginView.swift in Sources */,
+				95C2DE5D2AD13C4200600202 /* LoginAppleButton.swift in Sources */,
 				F013F3D82ACE973500423AFF /* ContentView.swift in Sources */,
 				F013F3D62ACE973500423AFF /* AustinApp.swift in Sources */,
 			);
@@ -266,15 +336,19 @@
 		};
 		F013F3E12ACE973600423AFF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 95C2DE6D2AD163A800600202 /* Config.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Austin/Austin.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Austin/Preview Content\"";
-				DEVELOPMENT_TEAM = 77745NX67K;
+				DEVELOPMENT_TEAM = 333J2S2AQK;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Austin/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.sports";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -285,7 +359,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.hyunjun.Austin;
+				PRODUCT_BUNDLE_IDENTIFIER = com.outline.baseline.austin;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -295,15 +369,19 @@
 		};
 		F013F3E22ACE973600423AFF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 95C2DE6D2AD163A800600202 /* Config.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Austin/Austin.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Austin/Preview Content\"";
-				DEVELOPMENT_TEAM = 77745NX67K;
+				DEVELOPMENT_TEAM = 333J2S2AQK;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Austin/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.sports";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -314,7 +392,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.hyunjun.Austin;
+				PRODUCT_BUNDLE_IDENTIFIER = com.outline.baseline.austin;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -344,6 +422,45 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		95C2DE602AD1455500600202 /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kakao/kakao-ios-sdk";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		95C2DE612AD1455500600202 /* KakaoSDK */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 95C2DE602AD1455500600202 /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */;
+			productName = KakaoSDK;
+		};
+		95C2DE632AD1455500600202 /* KakaoSDKAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 95C2DE602AD1455500600202 /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */;
+			productName = KakaoSDKAuth;
+		};
+		95C2DE652AD1455500600202 /* KakaoSDKCert */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 95C2DE602AD1455500600202 /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */;
+			productName = KakaoSDKCert;
+		};
+		95C2DE672AD1455500600202 /* KakaoSDKCertCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 95C2DE602AD1455500600202 /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */;
+			productName = KakaoSDKCertCore;
+		};
+		95C2DE692AD1455500600202 /* KakaoSDKCommon */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 95C2DE602AD1455500600202 /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */;
+			productName = KakaoSDKCommon;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F013F3CA2ACE973500423AFF /* Project object */;
 }
