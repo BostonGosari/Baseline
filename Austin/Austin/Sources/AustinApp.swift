@@ -11,6 +11,8 @@ import SwiftUI
 
 @main
 struct AustinApp: App {
+    let persistentController = PersistenceController.shared
+    
     init() {
        // Kakao SDK 초기화
         guard let apiKey = Bundle.main.object(forInfoDictionaryKey: "KAKAO_APP_KEY") as? String else {
@@ -21,6 +23,7 @@ struct AustinApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environment(\.managedObjectContext, persistentController.container.viewContext)
         }
     }
 }
