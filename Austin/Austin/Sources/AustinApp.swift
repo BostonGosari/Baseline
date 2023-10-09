@@ -5,9 +5,9 @@
 //  Created by Hyunjun Kim on 10/5/23.
 //
 
-import SwiftUI
 import KakaoSDKCommon
 import KakaoSDKAuth
+import SwiftUI
 
 @main
 struct AustinApp: App {

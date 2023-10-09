@@ -5,10 +5,10 @@
 //  Created by Seungui Moon on 10/7/23.
 //
 
-import SwiftUI
 import KakaoSDKCommon
 import KakaoSDKAuth
 import KakaoSDKUser
+import SwiftUI
 
 struct LoginKakaoButton: View {
     var body: some View {
