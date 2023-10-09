@@ -15,6 +15,9 @@
 		95C2DE662AD1455500600202 /* KakaoSDKCert in Frameworks */ = {isa = PBXBuildFile; productRef = 95C2DE652AD1455500600202 /* KakaoSDKCert */; };
 		95C2DE682AD1455500600202 /* KakaoSDKCertCore in Frameworks */ = {isa = PBXBuildFile; productRef = 95C2DE672AD1455500600202 /* KakaoSDKCertCore */; };
 		95C2DE6A2AD1455500600202 /* KakaoSDKCommon in Frameworks */ = {isa = PBXBuildFile; productRef = 95C2DE692AD1455500600202 /* KakaoSDKCommon */; };
+		95C2DF182AD3C6D900600202 /* CoreDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C2DF172AD3C6D900600202 /* CoreDataView.swift */; };
+		95C2DF1C2AD3C82800600202 /* TestModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 95C2DF1A2AD3C82800600202 /* TestModel.xcdatamodeld */; };
+		95C2DF1E2AD3CA4300600202 /* TestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C2DF1D2AD3CA4300600202 /* TestModel.swift */; };
 		F013F3D62ACE973500423AFF /* AustinApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F013F3D52ACE973500423AFF /* AustinApp.swift */; };
 		F013F3D82ACE973500423AFF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F013F3D72ACE973500423AFF /* ContentView.swift */; };
 		F013F3DA2ACE973600423AFF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F013F3D92ACE973600423AFF /* Assets.xcassets */; };
@@ -28,6 +31,9 @@
 		95C2DE5E2AD141CC00600202 /* LoginKakaoButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginKakaoButton.swift; sourceTree = "<group>"; };
 		95C2DE6B2AD15FDF00600202 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		95C2DE6D2AD163A800600202 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
+		95C2DF172AD3C6D900600202 /* CoreDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataView.swift; sourceTree = "<group>"; };
+		95C2DF1B2AD3C82800600202 /* TestModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TestModel.xcdatamodel; sourceTree = "<group>"; };
+		95C2DF1D2AD3CA4300600202 /* TestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestModel.swift; sourceTree = "<group>"; };
 		F013F3D22ACE973500423AFF /* Austin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Austin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F013F3D52ACE973500423AFF /* AustinApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AustinApp.swift; sourceTree = "<group>"; };
 		F013F3D72ACE973500423AFF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -65,6 +71,7 @@
 			children = (
 				F013F3D52ACE973500423AFF /* AustinApp.swift */,
 				F013F3D72ACE973500423AFF /* ContentView.swift */,
+				95C2DF152AD3C6BD00600202 /* CoreData */,
 				95C2DE582AD134B900600202 /* Login */,
 			);
 			path = Sources;
@@ -86,6 +93,32 @@
 				95C2DE572AD134B300600202 /* View */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		95C2DF152AD3C6BD00600202 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				95C2DF192AD3C81500600202 /* Model */,
+				95C2DF162AD3C6CD00600202 /* View */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		95C2DF162AD3C6CD00600202 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				95C2DF172AD3C6D900600202 /* CoreDataView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		95C2DF192AD3C81500600202 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				95C2DF1A2AD3C82800600202 /* TestModel.xcdatamodeld */,
+				95C2DF1D2AD3CA4300600202 /* TestModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		F013F3C92ACE973500423AFF = {
@@ -204,11 +237,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95C2DF1C2AD3C82800600202 /* TestModel.xcdatamodeld in Sources */,
 				95C2DE5F2AD141CC00600202 /* LoginKakaoButton.swift in Sources */,
 				95C2DE5A2AD134DF00600202 /* LoginView.swift in Sources */,
+				95C2DF1E2AD3CA4300600202 /* TestModel.swift in Sources */,
 				95C2DE5D2AD13C4200600202 /* LoginAppleButton.swift in Sources */,
 				F013F3D82ACE973500423AFF /* ContentView.swift in Sources */,
 				F013F3D62ACE973500423AFF /* AustinApp.swift in Sources */,
+				95C2DF182AD3C6D900600202 /* CoreDataView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -461,6 +497,19 @@
 			productName = KakaoSDKCommon;
 		};
 /* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		95C2DF1A2AD3C82800600202 /* TestModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				95C2DF1B2AD3C82800600202 /* TestModel.xcdatamodel */,
+			);
+			currentVersion = 95C2DF1B2AD3C82800600202 /* TestModel.xcdatamodel */;
+			path = TestModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = F013F3CA2ACE973500423AFF /* Project object */;
 }
