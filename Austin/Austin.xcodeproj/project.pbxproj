@@ -17,6 +17,7 @@
 		95C2DE6A2AD1455500600202 /* KakaoSDKCommon in Frameworks */ = {isa = PBXBuildFile; productRef = 95C2DE692AD1455500600202 /* KakaoSDKCommon */; };
 		95C2DF182AD3C6D900600202 /* CoreDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C2DF172AD3C6D900600202 /* CoreDataView.swift */; };
 		95C2DF1C2AD3C82800600202 /* TestModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 95C2DF1A2AD3C82800600202 /* TestModel.xcdatamodeld */; };
+		95C2DF1E2AD3CA4300600202 /* TestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C2DF1D2AD3CA4300600202 /* TestModel.swift */; };
 		F013F3D62ACE973500423AFF /* AustinApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F013F3D52ACE973500423AFF /* AustinApp.swift */; };
 		F013F3D82ACE973500423AFF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F013F3D72ACE973500423AFF /* ContentView.swift */; };
 		F013F3DA2ACE973600423AFF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F013F3D92ACE973600423AFF /* Assets.xcassets */; };
@@ -32,6 +33,7 @@
 		95C2DE6D2AD163A800600202 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		95C2DF172AD3C6D900600202 /* CoreDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataView.swift; sourceTree = "<group>"; };
 		95C2DF1B2AD3C82800600202 /* TestModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TestModel.xcdatamodel; sourceTree = "<group>"; };
+		95C2DF1D2AD3CA4300600202 /* TestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestModel.swift; sourceTree = "<group>"; };
 		F013F3D22ACE973500423AFF /* Austin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Austin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F013F3D52ACE973500423AFF /* AustinApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AustinApp.swift; sourceTree = "<group>"; };
 		F013F3D72ACE973500423AFF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				95C2DF1A2AD3C82800600202 /* TestModel.xcdatamodeld */,
+				95C2DF1D2AD3CA4300600202 /* TestModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -237,6 +240,7 @@
 				95C2DF1C2AD3C82800600202 /* TestModel.xcdatamodeld in Sources */,
 				95C2DE5F2AD141CC00600202 /* LoginKakaoButton.swift in Sources */,
 				95C2DE5A2AD134DF00600202 /* LoginView.swift in Sources */,
+				95C2DF1E2AD3CA4300600202 /* TestModel.swift in Sources */,
 				95C2DE5D2AD13C4200600202 /* LoginAppleButton.swift in Sources */,
 				F013F3D82ACE973500423AFF /* ContentView.swift in Sources */,
 				F013F3D62ACE973500423AFF /* AustinApp.swift in Sources */,
