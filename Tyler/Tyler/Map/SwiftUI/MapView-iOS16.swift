@@ -22,7 +22,7 @@ struct RunPoint: Identifiable {
     let image: String
 }
 
-struct MapView: View {
+struct MapView_iOS16: View {
     
     @State private var region = MKCoordinateRegion(
         center: .duckRun,
@@ -119,5 +119,5 @@ struct MapView: View {
 
 
 #Preview {
-    MapView()
+    MapView_iOS16()
 }

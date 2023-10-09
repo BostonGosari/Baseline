@@ -16,24 +16,15 @@ struct AnnotationItem: Identifiable {
     let imageName: String
 }
 
-struct UIKitContentView: View {
+struct MainView: View {
     
     let locationManager = CLLocationManager()
     
     @State private var camera = MKMapCamera(lookingAtCenter: .duckRun, fromDistance: 1300, pitch: 0, heading: -80)
-        
+    
     @State private var annotations: [AnnotationItem] = [
         AnnotationItem(coordinate: .duckRun, title: "오리런", imageName: "duck"),
         AnnotationItem(coordinate: CLLocationCoordinate2D(latitude: 37.53958, longitude: 127.07435), title: "스타트 포인트", imageName: "startpoint")
-    ]
-    
-    @State private var lineCoordinates = [
-        CLLocationCoordinate2D(latitude: 37.53958, longitude: 127.07435),
-        CLLocationCoordinate2D(latitude: 37.54132, longitude: 127.07575),
-        CLLocationCoordinate2D(latitude: 37.54233, longitude:  127.07631),
-        CLLocationCoordinate2D(latitude: 37.54215, longitude: 127.07750),
-        CLLocationCoordinate2D(latitude: 37.53936, longitude: 127.07687),
-        CLLocationCoordinate2D(latitude: 37.53958, longitude: 127.07435)
     ]
     
     @State private var coordinates: [CLLocationCoordinate2D] = {
@@ -45,12 +36,14 @@ struct UIKitContentView: View {
     }()
     
     @State var isMapChanged = false
-
+    @State var currentStep = 0
+    @State var timer: Timer?
+    
     
     var body: some View {
         VStack {
             Text("MapView")
-            UIKitMapView(
+            MapView(
                 camera: camera,
                 coordinates: coordinates,
                 annotations: annotations
@@ -80,14 +73,14 @@ struct UIKitContentView: View {
             .padding(.horizontal, 30)
             .overlay {
                 if isMapChanged {
-                    UIKitMapUserView(lineCoordinates: lineCoordinates)
+                    MapUserView()
                         .frame(maxWidth: .infinity)
                         .frame(height: 300)
                         .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
                         .padding(.horizontal, 30)
                 }
             }
-            Button(isMapChanged ? "내위치 고정" : "전체화면") {
+            Button(isMapChanged ? "Map User View" : "Map View") {
                 withAnimation {
                     isMapChanged.toggle()
                 }
@@ -95,7 +88,7 @@ struct UIKitContentView: View {
             .buttonStyle(.bordered)
             
             Text("Map Animation")
-            MapAnimationView(camera: camera, coordinates: coordinates, annotations: annotations)
+            MapAnimationView(camera: camera, coordinates: coordinates, annotations: annotations, currentStep: currentStep)
                 .overlay(alignment: .bottomTrailing) {
                     HStack {
                         Button {
@@ -119,6 +112,13 @@ struct UIKitContentView: View {
                 .frame(height: 300)
                 .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
                 .padding(.horizontal, 30)
+            Button(currentStep == 0 ? "Animate" : "Animating...") {
+                withAnimation {
+                    startAnimation()
+                }
+            }
+            .buttonStyle(.bordered)
+            .disabled(currentStep != 0)
         }
         .onAppear {
             locationManager.requestWhenInUseAuthorization()
@@ -130,9 +130,30 @@ struct UIKitContentView: View {
             camera = MKMapCamera(lookingAtCenter: .duckRun, fromDistance: 1300, pitch: 0, heading: -80)
         }
     }
+    
+    // 애니메이션 시작
+    private func startAnimation() {
+        timer = Timer.scheduledTimer(withTimeInterval: 0.03, repeats: true) { _ in
+            if currentStep < coordinates.count {
+                currentStep += 1
+            } else {
+                stopAnimation()
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                    currentStep = 0
+                }
+            }
+        }
+    }
+    
+    // 애니메이션 정지
+    private func stopAnimation() {
+        timer?.invalidate()
+        timer = nil
+    }
 }
 
 
+
 #Preview {
-    UIKitContentView()
+    MainView()
 }

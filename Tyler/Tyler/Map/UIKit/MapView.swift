@@ -8,7 +8,7 @@
 import SwiftUI
 import MapKit
 
-struct UIKitMapView: UIViewRepresentable {
+struct MapView: UIViewRepresentable {
     
     var camera: MKMapCamera
     var coordinates: [CLLocationCoordinate2D]
@@ -43,9 +43,9 @@ struct UIKitMapView: UIViewRepresentable {
     }
     
     class Coordinator: NSObject, MKMapViewDelegate {
-        var parent: UIKitMapView
+        var parent: MapView
         
-        init(_ parent: UIKitMapView) {
+        init(_ parent: MapView) {
             self.parent = parent
         }
         
@@ -111,5 +111,5 @@ struct UIKitMapView: UIViewRepresentable {
 }
 
 #Preview {
-    UIKitContentView()
+    MainView()
 }

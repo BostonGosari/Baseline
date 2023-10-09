@@ -13,9 +13,9 @@ struct MapAnimationView: UIViewRepresentable {
     var camera: MKMapCamera
     var coordinates: [CLLocationCoordinate2D]
     var annotations: [AnnotationItem]
-    var drawingTimer: Timer?
-    let mapView = MKMapView()
 
+    var currentStep: Int
+    let mapView = MKMapView()
     
     func makeUIView(context: Context) -> MKMapView {
         mapView.delegate = context.coordinator
@@ -23,7 +23,7 @@ struct MapAnimationView: UIViewRepresentable {
         mapView.isUserInteractionEnabled = true
         mapView.showsUserLocation = true
         
-        let polyline = MKPolyline(coordinates: coordinates, count: coordinates.count)
+        let polyline = MKPolyline(coordinates: coordinates, count: currentStep)
         mapView.addOverlay(polyline)
         
         for annotation in annotations {
@@ -38,6 +38,15 @@ struct MapAnimationView: UIViewRepresentable {
     
     func updateUIView(_ view: MKMapView, context: Context) {
         view.setCamera(camera, animated: true)
+        
+        // 현재 스텝에 따라 새로운 선분을 추가하기 전에 이전 선분을 제거합니다.
+        let overlays = view.overlays.filter { $0 is MKPolyline }
+        view.removeOverlays(overlays)
+        
+        // 현재 스텝에 따라 새로운 선분을 추가합니다.
+        let subCoordinates = Array(coordinates.prefix(upTo: currentStep))
+        let currentSegment = MKPolyline(coordinates: subCoordinates, count: subCoordinates.count)
+        view.addOverlay(currentSegment)
     }
     
     func makeCoordinator() -> Coordinator {
@@ -114,5 +123,5 @@ struct MapAnimationView: UIViewRepresentable {
 
 
 #Preview {
-    UIKitContentView()
+    MainView()
 }

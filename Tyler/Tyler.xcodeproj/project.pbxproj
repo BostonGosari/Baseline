@@ -11,11 +11,11 @@
 		F013F3BE2ACE96FB00423AFF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F013F3BD2ACE96FB00423AFF /* ContentView.swift */; };
 		F013F3C02ACE96FE00423AFF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F013F3BF2ACE96FE00423AFF /* Assets.xcassets */; };
 		F013F3C32ACE96FE00423AFF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F013F3C22ACE96FE00423AFF /* Preview Assets.xcassets */; };
-		F0CE54132AD2E3C500662E62 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0CE54122AD2E3C500662E62 /* MapView.swift */; };
+		F0CE54132AD2E3C500662E62 /* MapView-iOS16.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0CE54122AD2E3C500662E62 /* MapView-iOS16.swift */; };
 		F0CE54152AD30FF700662E62 /* MapView-iOS17.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0CE54142AD30FF600662E62 /* MapView-iOS17.swift */; };
-		F0CE541B2AD33BAB00662E62 /* UIKitMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0CE541A2AD33BAB00662E62 /* UIKitMapView.swift */; };
-		F0CE541D2AD33BC100662E62 /* UIKitContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0CE541C2AD33BC100662E62 /* UIKitContentView.swift */; };
-		F0CE54202AD394A500662E62 /* UIKitMapUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0CE541F2AD394A500662E62 /* UIKitMapUserView.swift */; };
+		F0CE541B2AD33BAB00662E62 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0CE541A2AD33BAB00662E62 /* MapView.swift */; };
+		F0CE541D2AD33BC100662E62 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0CE541C2AD33BC100662E62 /* MainView.swift */; };
+		F0CE54202AD394A500662E62 /* MapUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0CE541F2AD394A500662E62 /* MapUserView.swift */; };
 		F0CE54222AD3F00600662E62 /* duckRun.kml in Resources */ = {isa = PBXBuildFile; fileRef = F0CE54212AD3F00600662E62 /* duckRun.kml */; };
 		F0CE54242AD3F46900662E62 /* KMLParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0CE54232AD3F46900662E62 /* KMLParser.swift */; };
 		F0CE54262AD3FD3300662E62 /* MapAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0CE54252AD3FD3300662E62 /* MapAnimationView.swift */; };
@@ -27,11 +27,11 @@
 		F013F3BD2ACE96FB00423AFF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		F013F3BF2ACE96FE00423AFF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F013F3C22ACE96FE00423AFF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		F0CE54122AD2E3C500662E62 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		F0CE54122AD2E3C500662E62 /* MapView-iOS16.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MapView-iOS16.swift"; sourceTree = "<group>"; };
 		F0CE54142AD30FF600662E62 /* MapView-iOS17.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MapView-iOS17.swift"; sourceTree = "<group>"; };
-		F0CE541A2AD33BAB00662E62 /* UIKitMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKitMapView.swift; sourceTree = "<group>"; };
-		F0CE541C2AD33BC100662E62 /* UIKitContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKitContentView.swift; sourceTree = "<group>"; };
-		F0CE541F2AD394A500662E62 /* UIKitMapUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKitMapUserView.swift; sourceTree = "<group>"; };
+		F0CE541A2AD33BAB00662E62 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		F0CE541C2AD33BC100662E62 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		F0CE541F2AD394A500662E62 /* MapUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapUserView.swift; sourceTree = "<group>"; };
 		F0CE54212AD3F00600662E62 /* duckRun.kml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = duckRun.kml; sourceTree = "<group>"; };
 		F0CE54232AD3F46900662E62 /* KMLParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KMLParser.swift; sourceTree = "<group>"; };
 		F0CE54252AD3FD3300662E62 /* MapAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapAnimationView.swift; sourceTree = "<group>"; };
@@ -87,9 +87,8 @@
 		F0CE54112AD2E3B600662E62 /* Map */ = {
 			isa = PBXGroup;
 			children = (
-				F0CE54122AD2E3C500662E62 /* MapView.swift */,
-				F0CE54142AD30FF600662E62 /* MapView-iOS17.swift */,
 				F0CE541E2AD33BC400662E62 /* UIKit */,
+				F0CE54272AD405A500662E62 /* SwiftUI */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -97,14 +96,23 @@
 		F0CE541E2AD33BC400662E62 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
-				F0CE541A2AD33BAB00662E62 /* UIKitMapView.swift */,
-				F0CE541C2AD33BC100662E62 /* UIKitContentView.swift */,
-				F0CE541F2AD394A500662E62 /* UIKitMapUserView.swift */,
+				F0CE541C2AD33BC100662E62 /* MainView.swift */,
+				F0CE541A2AD33BAB00662E62 /* MapView.swift */,
+				F0CE541F2AD394A500662E62 /* MapUserView.swift */,
+				F0CE54252AD3FD3300662E62 /* MapAnimationView.swift */,
 				F0CE54212AD3F00600662E62 /* duckRun.kml */,
 				F0CE54232AD3F46900662E62 /* KMLParser.swift */,
-				F0CE54252AD3FD3300662E62 /* MapAnimationView.swift */,
 			);
 			path = UIKit;
+			sourceTree = "<group>";
+		};
+		F0CE54272AD405A500662E62 /* SwiftUI */ = {
+			isa = PBXGroup;
+			children = (
+				F0CE54122AD2E3C500662E62 /* MapView-iOS16.swift */,
+				F0CE54142AD30FF600662E62 /* MapView-iOS17.swift */,
+			);
+			path = SwiftUI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -180,11 +188,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				F013F3BE2ACE96FB00423AFF /* ContentView.swift in Sources */,
-				F0CE54132AD2E3C500662E62 /* MapView.swift in Sources */,
-				F0CE541B2AD33BAB00662E62 /* UIKitMapView.swift in Sources */,
+				F0CE54132AD2E3C500662E62 /* MapView-iOS16.swift in Sources */,
+				F0CE541B2AD33BAB00662E62 /* MapView.swift in Sources */,
 				F0CE54242AD3F46900662E62 /* KMLParser.swift in Sources */,
-				F0CE54202AD394A500662E62 /* UIKitMapUserView.swift in Sources */,
-				F0CE541D2AD33BC100662E62 /* UIKitContentView.swift in Sources */,
+				F0CE54202AD394A500662E62 /* MapUserView.swift in Sources */,
+				F0CE541D2AD33BC100662E62 /* MainView.swift in Sources */,
 				F013F3BC2ACE96FB00423AFF /* TylerApp.swift in Sources */,
 				F0CE54262AD3FD3300662E62 /* MapAnimationView.swift in Sources */,
 				F0CE54152AD30FF700662E62 /* MapView-iOS17.swift in Sources */,

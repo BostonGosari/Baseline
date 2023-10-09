@@ -8,9 +8,7 @@
 import SwiftUI
 import MapKit
 
-struct UIKitMapUserView: UIViewRepresentable {
-    var lineCoordinates: [CLLocationCoordinate2D]
-    
+struct MapUserView: UIViewRepresentable {    
     func makeUIView(context: Context) -> MKMapView {
         let mapView = MKMapView()
         mapView.delegate = context.coordinator
@@ -19,9 +17,6 @@ struct UIKitMapUserView: UIViewRepresentable {
         mapView.userTrackingMode = .followWithHeading
         mapView.isUserInteractionEnabled = false
         mapView.showsUserLocation = true
-        
-        let polyline = MKPolyline(coordinates: lineCoordinates, count: lineCoordinates.count)
-        mapView.addOverlay(polyline)
         
         return mapView
     }
@@ -34,9 +29,9 @@ struct UIKitMapUserView: UIViewRepresentable {
     }
     
     class Coordinator: NSObject, MKMapViewDelegate {
-        var parent: UIKitMapUserView
+        var parent: MapUserView
         
-        init(_ parent: UIKitMapUserView) {
+        init(_ parent: MapUserView) {
             self.parent = parent
         }
         
@@ -54,5 +49,5 @@ struct UIKitMapUserView: UIViewRepresentable {
 }
 
 #Preview {
-    UIKitContentView()
+    MainView()
 }
