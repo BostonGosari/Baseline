@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+/// Description
 struct Carousel<Content: View>: View {
     typealias PageIndex = Int
     
@@ -22,27 +23,29 @@ struct Carousel<Content: View>: View {
         pageCount: Int,
         edgeSpace: CGFloat,
         spacing: CGFloat,
-        currentIndex: Binding<Int>, // currentIndex를 Binding으로 받아옴
+        currentIndex: Binding<Int>,
         @ViewBuilder content: @escaping (PageIndex) -> Content
     ) {
         self.pageCount = pageCount
         self.edgeSpace = edgeSpace
         self.spacing = spacing
-        self._currentIndex = currentIndex // Binding으로 currentIndex 연결
+        self._currentIndex = currentIndex
         self.content = content
     }
     
     var body: some View {
         GeometryReader { proxy in
             let baseOffset = spacing + edgeSpace
+            let pageHeight = proxy.size.height
             let pageWidth = proxy.size.width - (edgeSpace + spacing) * 2
             let offsetX = baseOffset + CGFloat(currentIndex) * -pageWidth + CGFloat(currentIndex) * -spacing + dragOffset
             
             HStack(spacing: spacing) {
                 ForEach(0..<pageCount, id: \.self) { pageIndex in
+                    let scale = calculateScale(pageIndex: pageIndex, pageWidth: pageWidth)
                     self.content(pageIndex)
-                        .frame(width: pageWidth, height: proxy.size.height)
-                        .scaleEffect(calculateScale(pageIndex: pageIndex, pageWidth: pageWidth)) // calculateScale 함수에 pageWidth를 전달
+                        .frame(width: pageWidth, height: pageHeight)
+                        .scaleEffect(scale)
                 }
                 .contentShape(Rectangle())
             }

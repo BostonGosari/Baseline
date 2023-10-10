@@ -10,11 +10,13 @@ import SwiftUI
 struct CarouselView: View {
     
     let pageCount = 4
+    let edgeSpace: CGFloat = 30
+    let spacing: CGFloat = 5
     @State var currentIndex = 0
     
     var body: some View {
         ScrollView {
-            Carousel(pageCount: pageCount, edgeSpace: 30, spacing: 5, currentIndex: $currentIndex) { pageIndex in
+            Carousel(pageCount: pageCount, edgeSpace: edgeSpace, spacing: spacing, currentIndex: $currentIndex) { pageIndex in
                 Rectangle()
                     .foregroundStyle(.green)
                     .frame(height: 450)
@@ -24,6 +26,7 @@ struct CarouselView: View {
                     }
             }
             .frame(height: 500)
+            
             HStack {
                 ForEach(0..<pageCount, id: \.self) { i in
                     Circle()
