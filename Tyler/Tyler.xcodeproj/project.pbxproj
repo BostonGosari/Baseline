@@ -22,6 +22,7 @@
 		F013F41D2ACF1E4D00423AFF /* RoundCornerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F013F41C2ACF1E4D00423AFF /* RoundCornerView.swift */; };
 		F05A8E632AD5BAE600898431 /* Carousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05A8E622AD5BAE600898431 /* Carousel.swift */; };
 		F0AF3C412AD5BD6600F4F69D /* CarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AF3C402AD5BD6600F4F69D /* CarouselView.swift */; };
+		F0AF3C472AD5E27200F4F69D /* CarouselView_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AF3C462AD5E27200F4F69D /* CarouselView_iOS.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		F013F41C2ACF1E4D00423AFF /* RoundCornerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundCornerView.swift; sourceTree = "<group>"; };
 		F05A8E622AD5BAE600898431 /* Carousel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Carousel.swift; sourceTree = "<group>"; };
 		F0AF3C402AD5BD6600F4F69D /* CarouselView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselView.swift; sourceTree = "<group>"; };
+		F0AF3C462AD5E27200F4F69D /* CarouselView_iOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselView_iOS.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +138,7 @@
 			children = (
 				F05A8E622AD5BAE600898431 /* Carousel.swift */,
 				F0AF3C402AD5BD6600F4F69D /* CarouselView.swift */,
+				F0AF3C462AD5E27200F4F69D /* CarouselView_iOS.swift */,
 			);
 			path = Carousel;
 			sourceTree = "<group>";
@@ -218,6 +221,7 @@
 				F001E6562ACF23E60002F665 /* HeroAnimationView.swift in Sources */,
 				F0AF3C412AD5BD6600F4F69D /* CarouselView.swift in Sources */,
 				F013F3BC2ACE96FB00423AFF /* TylerApp.swift in Sources */,
+				F0AF3C472AD5E27200F4F69D /* CarouselView_iOS.swift in Sources */,
 				F001E65D2ACF59CF0002F665 /* Animations.swift in Sources */,
 				F013F4182ACF025900423AFF /* RoundCorner.swift in Sources */,
 				F001E6582ACF52660002F665 /* CardView.swift in Sources */,
