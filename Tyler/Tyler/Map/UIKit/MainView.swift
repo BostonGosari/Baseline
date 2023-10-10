@@ -150,6 +150,13 @@ struct AnnotationItem: Identifiable {
     let imageName: String
 }
 
+extension CLLocationCoordinate2D {
+    static let duckRun = CLLocationCoordinate2D(
+        latitude: 37.54161,
+        longitude: 127.07648
+    )
+}
+
 #Preview {
     MainView()
 }

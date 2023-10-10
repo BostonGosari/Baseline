@@ -8,13 +8,6 @@ import CoreLocation
 import MapKit
 import SwiftUI
 
-extension CLLocationCoordinate2D {
-    static let duckRun = CLLocationCoordinate2D(
-        latitude: 37.54161,
-        longitude: 127.07648
-    )
-}
-
 struct RunPoint: Identifiable {
     let id = UUID()
     let title: String
@@ -29,13 +22,6 @@ struct MapView_iOS16: View {
         latitudinalMeters: 600,
         longitudinalMeters: 600
     )
-    
-    @State private var region2 = MKCoordinateRegion(
-        center: .duckRun,
-        latitudinalMeters: 600,
-        longitudinalMeters: 600
-    )
-    
     
     @State private var camera = MKMapCamera(lookingAtCenter: .duckRun, fromDistance: 1800, pitch: 0, heading: -80)
         
