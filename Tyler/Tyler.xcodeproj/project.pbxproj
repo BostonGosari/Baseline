@@ -20,7 +20,36 @@
 		F013F4182ACF025900423AFF /* RoundCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = F013F4172ACF025900423AFF /* RoundCorner.swift */; };
 		F013F41A2ACF054F00423AFF /* Tyler.docc in Sources */ = {isa = PBXBuildFile; fileRef = F013F4192ACF054F00423AFF /* Tyler.docc */; };
 		F013F41D2ACF1E4D00423AFF /* RoundCornerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F013F41C2ACF1E4D00423AFF /* RoundCornerView.swift */; };
+		F05A8E472AD55D8200898431 /* WatchTylerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05A8E462AD55D8200898431 /* WatchTylerApp.swift */; };
+		F05A8E492AD55D8200898431 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05A8E482AD55D8200898431 /* ContentView.swift */; };
+		F05A8E4B2AD55D8400898431 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F05A8E4A2AD55D8400898431 /* Assets.xcassets */; };
+		F05A8E4E2AD55D8400898431 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F05A8E4D2AD55D8400898431 /* Preview Assets.xcassets */; };
+		F05A8E512AD55D8400898431 /* WatchTyler Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = F05A8E442AD55D8200898431 /* WatchTyler Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F05A8E4F2AD55D8400898431 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F013F3B02ACE96FB00423AFF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F05A8E432AD55D8200898431;
+			remoteInfo = "WatchTyler Watch App";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		F05A8E522AD55D8400898431 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				F05A8E512AD55D8400898431 /* WatchTyler Watch App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		F001E6552ACF23E60002F665 /* HeroAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroAnimationView.swift; sourceTree = "<group>"; };
@@ -37,10 +66,22 @@
 		F013F4172ACF025900423AFF /* RoundCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundCorner.swift; sourceTree = "<group>"; };
 		F013F4192ACF054F00423AFF /* Tyler.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = Tyler.docc; sourceTree = "<group>"; };
 		F013F41C2ACF1E4D00423AFF /* RoundCornerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundCornerView.swift; sourceTree = "<group>"; };
+		F05A8E442AD55D8200898431 /* WatchTyler Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WatchTyler Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F05A8E462AD55D8200898431 /* WatchTylerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchTylerApp.swift; sourceTree = "<group>"; };
+		F05A8E482AD55D8200898431 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		F05A8E4A2AD55D8400898431 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F05A8E4D2AD55D8400898431 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		F013F3B52ACE96FB00423AFF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F05A8E412AD55D8200898431 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -82,6 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				F013F3BA2ACE96FB00423AFF /* Tyler */,
+				F05A8E452AD55D8200898431 /* WatchTyler Watch App */,
 				F013F3B92ACE96FB00423AFF /* Products */,
 			);
 			sourceTree = "<group>";
@@ -90,6 +132,7 @@
 			isa = PBXGroup;
 			children = (
 				F013F3B82ACE96FB00423AFF /* Tyler.app */,
+				F05A8E442AD55D8200898431 /* WatchTyler Watch App.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -126,6 +169,25 @@
 			path = RoundCorner;
 			sourceTree = "<group>";
 		};
+		F05A8E452AD55D8200898431 /* WatchTyler Watch App */ = {
+			isa = PBXGroup;
+			children = (
+				F05A8E462AD55D8200898431 /* WatchTylerApp.swift */,
+				F05A8E482AD55D8200898431 /* ContentView.swift */,
+				F05A8E4A2AD55D8400898431 /* Assets.xcassets */,
+				F05A8E4C2AD55D8400898431 /* Preview Content */,
+			);
+			path = "WatchTyler Watch App";
+			sourceTree = "<group>";
+		};
+		F05A8E4C2AD55D8400898431 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				F05A8E4D2AD55D8400898431 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -136,14 +198,33 @@
 				F013F3B42ACE96FB00423AFF /* Sources */,
 				F013F3B52ACE96FB00423AFF /* Frameworks */,
 				F013F3B62ACE96FB00423AFF /* Resources */,
+				F05A8E522AD55D8400898431 /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F05A8E502AD55D8400898431 /* PBXTargetDependency */,
+			);
+			name = Tyler;
+			productName = Tyler;
+			productReference = F013F3B82ACE96FB00423AFF /* Tyler.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F05A8E432AD55D8200898431 /* WatchTyler Watch App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F05A8E552AD55D8400898431 /* Build configuration list for PBXNativeTarget "WatchTyler Watch App" */;
+			buildPhases = (
+				F05A8E402AD55D8200898431 /* Sources */,
+				F05A8E412AD55D8200898431 /* Frameworks */,
+				F05A8E422AD55D8200898431 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = Tyler;
-			productName = Tyler;
-			productReference = F013F3B82ACE96FB00423AFF /* Tyler.app */;
+			name = "WatchTyler Watch App";
+			productName = "WatchTyler Watch App";
+			productReference = F05A8E442AD55D8200898431 /* WatchTyler Watch App.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -157,6 +238,9 @@
 				LastUpgradeCheck = 1500;
 				TargetAttributes = {
 					F013F3B72ACE96FB00423AFF = {
+						CreatedOnToolsVersion = 15.0;
+					};
+					F05A8E432AD55D8200898431 = {
 						CreatedOnToolsVersion = 15.0;
 					};
 				};
@@ -175,6 +259,7 @@
 			projectRoot = "";
 			targets = (
 				F013F3B72ACE96FB00423AFF /* Tyler */,
+				F05A8E432AD55D8200898431 /* WatchTyler Watch App */,
 			);
 		};
 /* End PBXProject section */
@@ -186,6 +271,15 @@
 			files = (
 				F013F3C32ACE96FE00423AFF /* Preview Assets.xcassets in Resources */,
 				F013F3C02ACE96FE00423AFF /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F05A8E422AD55D8200898431 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F05A8E4E2AD55D8400898431 /* Preview Assets.xcassets in Resources */,
+				F05A8E4B2AD55D8400898431 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -210,7 +304,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F05A8E402AD55D8200898431 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F05A8E492AD55D8200898431 /* ContentView.swift in Sources */,
+				F05A8E472AD55D8200898431 /* WatchTylerApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F05A8E502AD55D8400898431 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F05A8E432AD55D8200898431 /* WatchTyler Watch App */;
+			targetProxy = F05A8E4F2AD55D8400898431 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		F013F3C42ACE96FE00423AFF /* Debug */ = {
@@ -335,6 +446,7 @@
 		F013F3C72ACE96FE00423AFF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -366,6 +478,7 @@
 		F013F3C82ACE96FE00423AFF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -394,6 +507,66 @@
 			};
 			name = Release;
 		};
+		F05A8E532AD55D8400898431 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"WatchTyler Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = 77745NX67K;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = WatchTyler;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.hyunjun.Tyler;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hyunjun.Tyler.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 9.6;
+			};
+			name = Debug;
+		};
+		F05A8E542AD55D8400898431 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"WatchTyler Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = 77745NX67K;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = WatchTyler;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.hyunjun.Tyler;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hyunjun.Tyler.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 9.6;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -411,6 +584,15 @@
 			buildConfigurations = (
 				F013F3C72ACE96FE00423AFF /* Debug */,
 				F013F3C82ACE96FE00423AFF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F05A8E552AD55D8400898431 /* Build configuration list for PBXNativeTarget "WatchTyler Watch App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F05A8E532AD55D8400898431 /* Debug */,
+				F05A8E542AD55D8400898431 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
