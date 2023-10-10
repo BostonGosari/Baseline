@@ -25,6 +25,8 @@
 		F05A8E4B2AD55D8400898431 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F05A8E4A2AD55D8400898431 /* Assets.xcassets */; };
 		F05A8E4E2AD55D8400898431 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F05A8E4D2AD55D8400898431 /* Preview Assets.xcassets */; };
 		F05A8E512AD55D8400898431 /* WatchTyler Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = F05A8E442AD55D8200898431 /* WatchTyler Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		F05A8E582AD55E7000898431 /* WatchConnectivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05A8E572AD55E7000898431 /* WatchConnectivityView.swift */; };
+		F05A8E5B2AD5609300898431 /* WatchConnectivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05A8E5A2AD5609300898431 /* WatchConnectivityView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +73,8 @@
 		F05A8E482AD55D8200898431 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		F05A8E4A2AD55D8400898431 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F05A8E4D2AD55D8400898431 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		F05A8E572AD55E7000898431 /* WatchConnectivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchConnectivityView.swift; sourceTree = "<group>"; };
+		F05A8E5A2AD5609300898431 /* WatchConnectivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchConnectivityView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +146,7 @@
 			children = (
 				F013F3BB2ACE96FB00423AFF /* TylerApp.swift */,
 				F013F3BD2ACE96FB00423AFF /* ContentView.swift */,
+				F05A8E562AD55E4E00898431 /* WatchConnectivity */,
 				F001E6542ACF23D60002F665 /* HeroAnimation */,
 				F013F41B2ACF1E3B00423AFF /* RoundCorner */,
 				F001E6602AD0530F0002F665 /* ScrollViewOffset */,
@@ -174,6 +179,7 @@
 			children = (
 				F05A8E462AD55D8200898431 /* WatchTylerApp.swift */,
 				F05A8E482AD55D8200898431 /* ContentView.swift */,
+				F05A8E592AD5607400898431 /* WatchConnectivity */,
 				F05A8E4A2AD55D8400898431 /* Assets.xcassets */,
 				F05A8E4C2AD55D8400898431 /* Preview Content */,
 			);
@@ -186,6 +192,22 @@
 				F05A8E4D2AD55D8400898431 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		F05A8E562AD55E4E00898431 /* WatchConnectivity */ = {
+			isa = PBXGroup;
+			children = (
+				F05A8E572AD55E7000898431 /* WatchConnectivityView.swift */,
+			);
+			path = WatchConnectivity;
+			sourceTree = "<group>";
+		};
+		F05A8E592AD5607400898431 /* WatchConnectivity */ = {
+			isa = PBXGroup;
+			children = (
+				F05A8E5A2AD5609300898431 /* WatchConnectivityView.swift */,
+			);
+			path = WatchConnectivity;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -293,6 +315,7 @@
 				F013F3BE2ACE96FB00423AFF /* ContentView.swift in Sources */,
 				F013F41A2ACF054F00423AFF /* Tyler.docc in Sources */,
 				F001E65A2ACF53F80002F665 /* CardDetailView.swift in Sources */,
+				F05A8E582AD55E7000898431 /* WatchConnectivityView.swift in Sources */,
 				F001E65F2ACF87DA0002F665 /* ButtonStyles.swift in Sources */,
 				F001E6562ACF23E60002F665 /* HeroAnimationView.swift in Sources */,
 				F013F3BC2ACE96FB00423AFF /* TylerApp.swift in Sources */,
@@ -308,6 +331,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F05A8E5B2AD5609300898431 /* WatchConnectivityView.swift in Sources */,
 				F05A8E492AD55D8200898431 /* ContentView.swift in Sources */,
 				F05A8E472AD55D8200898431 /* WatchTylerApp.swift in Sources */,
 			);
