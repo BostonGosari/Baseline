@@ -9,6 +9,8 @@ import SwiftUI
 
 struct WatchConnectivityView: View {
     
+    @StateObject var deviceCommunicator = DeviceCommunicator.shared
+    
     @State private var messageText = ""
     @State private var transferText = ""
     
@@ -23,7 +25,9 @@ struct WatchConnectivityView: View {
                         .fill(.thinMaterial)
                 )
             Button {
-                
+                deviceCommunicator.session.sendMessage(["messageText" : self.messageText], replyHandler: nil) {(error) in
+                    print(error.localizedDescription)
+                }
             } label: {
                 Text("Send Message")
             }
@@ -36,7 +40,7 @@ struct WatchConnectivityView: View {
                         .fill(.thinMaterial)
                 )
             Button {
-                
+                deviceCommunicator.session.transferUserInfo(["transferText" : self.transferText])
             } label: {
                 Text("Transfer Data to watchOS")
             }
@@ -50,7 +54,7 @@ struct WatchConnectivityView: View {
                 Text("Message")
                     .font(.title3)
                     .bold()
-                Text("Crown Scroll Data :")
+                Text("Crown Scroll Data : \(deviceCommunicator.messageScrollValue)")
             }
             .frame(maxWidth: .infinity, alignment: .leading)
             .padding()
@@ -62,7 +66,7 @@ struct WatchConnectivityView: View {
                 Text("Transfer Info")
                     .font(.title3)
                     .bold()
-                Text("Crown Scroll Data :")
+                Text("Crown Scroll Data : \(deviceCommunicator.transferScrollValue)")
             }
             .frame(maxWidth: .infinity, alignment: .leading)
             .padding()

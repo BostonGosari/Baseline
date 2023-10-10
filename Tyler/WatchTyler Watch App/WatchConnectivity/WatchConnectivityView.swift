@@ -9,22 +9,26 @@ import SwiftUI
 
 struct WatchConnectivityView: View {
     
-    @State private var scrollAmount = 0.0
+    @StateObject var deviceCommunicator = DeviceCommunicator.shared
+    
+    @State private var scrollValue = 0.0
     
     var body: some View {
         TabView {
             NavigationStack {
                 VStack {
-                    Text("Scroll value: \(scrollAmount, specifier: "%.1f")")
+                    Text("Scroll value: \(scrollValue, specifier: "%.1f")")
                         .focusable(true)
-                        .digitalCrownRotation($scrollAmount)
+                        .digitalCrownRotation($scrollValue)
                     
                     Button("Send Message") {
-                        
+                        deviceCommunicator.session.sendMessage(["messageScrollValue" : self.scrollValue], replyHandler: nil) {(error) in
+                            print(error.localizedDescription)
+                        }
                     }
                     
                     Button("Transfer Data") {
-                        
+                        deviceCommunicator.session.transferUserInfo(["transferScrollValue" : self.scrollValue])
                     }
                 }
                 .navigationTitle("Send Data")
@@ -33,7 +37,7 @@ struct WatchConnectivityView: View {
             NavigationStack {
                 VStack(alignment: .leading) {
                     Text("Message")
-                    Text("Message")
+                    Text("\(deviceCommunicator.messageText)")
                         .padding()
                         .frame(maxWidth: .infinity)
                         .background {
@@ -41,7 +45,7 @@ struct WatchConnectivityView: View {
                                 .foregroundStyle(.gray.opacity(0.3))
                         }
                     Text("Transfer Info")
-                    Text("Transfer Info")
+                    Text("\(deviceCommunicator.transferText)")
                         .padding()
                         .frame(maxWidth: .infinity)
                         .background {

@@ -27,6 +27,8 @@
 		F05A8E512AD55D8400898431 /* WatchTyler Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = F05A8E442AD55D8200898431 /* WatchTyler Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		F05A8E582AD55E7000898431 /* WatchConnectivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05A8E572AD55E7000898431 /* WatchConnectivityView.swift */; };
 		F05A8E5B2AD5609300898431 /* WatchConnectivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05A8E5A2AD5609300898431 /* WatchConnectivityView.swift */; };
+		F05A8E5D2AD56CC100898431 /* DeviceCommunicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05A8E5C2AD56CC100898431 /* DeviceCommunicator.swift */; };
+		F05A8E5E2AD56CD400898431 /* DeviceCommunicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05A8E5C2AD56CC100898431 /* DeviceCommunicator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +77,7 @@
 		F05A8E4D2AD55D8400898431 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F05A8E572AD55E7000898431 /* WatchConnectivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchConnectivityView.swift; sourceTree = "<group>"; };
 		F05A8E5A2AD5609300898431 /* WatchConnectivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchConnectivityView.swift; sourceTree = "<group>"; };
+		F05A8E5C2AD56CC100898431 /* DeviceCommunicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceCommunicator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -198,6 +201,7 @@
 			isa = PBXGroup;
 			children = (
 				F05A8E572AD55E7000898431 /* WatchConnectivityView.swift */,
+				F05A8E5C2AD56CC100898431 /* DeviceCommunicator.swift */,
 			);
 			path = WatchConnectivity;
 			sourceTree = "<group>";
@@ -313,6 +317,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F013F3BE2ACE96FB00423AFF /* ContentView.swift in Sources */,
+				F05A8E5D2AD56CC100898431 /* DeviceCommunicator.swift in Sources */,
 				F013F41A2ACF054F00423AFF /* Tyler.docc in Sources */,
 				F001E65A2ACF53F80002F665 /* CardDetailView.swift in Sources */,
 				F05A8E582AD55E7000898431 /* WatchConnectivityView.swift in Sources */,
@@ -331,6 +336,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F05A8E5E2AD56CD400898431 /* DeviceCommunicator.swift in Sources */,
 				F05A8E5B2AD5609300898431 /* WatchConnectivityView.swift in Sources */,
 				F05A8E492AD55D8200898431 /* ContentView.swift in Sources */,
 				F05A8E472AD55D8200898431 /* WatchTylerApp.swift in Sources */,
