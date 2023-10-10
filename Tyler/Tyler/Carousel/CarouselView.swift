@@ -14,7 +14,7 @@ struct CarouselView: View {
     
     var body: some View {
         ScrollView {
-            Carousel(pageCount: pageCount, edgeSpace: 30, spacing: 10, currentIndex: $currentIndex) { pageIndex in
+            Carousel(pageCount: pageCount, edgeSpace: 30, spacing: 5, currentIndex: $currentIndex) { pageIndex in
                 Rectangle()
                     .foregroundStyle(.green)
                     .frame(height: 450)

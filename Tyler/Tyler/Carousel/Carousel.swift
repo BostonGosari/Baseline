@@ -42,15 +42,15 @@ struct Carousel<Content: View>: View {
                 ForEach(0..<pageCount, id: \.self) { pageIndex in
                     self.content(pageIndex)
                         .frame(width: pageWidth, height: proxy.size.height)
-                        .scaleEffect(pageIndex == currentIndex ? 1 : 0.95)
+                        .scaleEffect(calculateScale(pageIndex: pageIndex, pageWidth: pageWidth)) // calculateScale 함수에 pageWidth를 전달
                 }
                 .contentShape(Rectangle())
             }
             .offset(x: offsetX)
             .gesture(
                 DragGesture()
-                    .updating($dragOffset) { value, out, _ in
-                        out = value.translation.width
+                    .updating($dragOffset) { value, dragOffset, _ in
+                        dragOffset = value.translation.width
                     }
                     .onEnded { value in
                         let offsetX = value.translation.width
@@ -62,6 +62,24 @@ struct Carousel<Content: View>: View {
             )
             .animation(.spring, value: dragOffset)
         }
+    }
+    
+    // Scale Animation
+    private func calculateScale(pageIndex: Int, pageWidth: CGFloat) -> CGFloat {
+        let minScale: CGFloat = 0.9
+        let maxScale: CGFloat = 1.0
+        let distanceToCurrent = abs(pageIndex - currentIndex)
+        let dragDistance = abs(dragOffset)
+        
+        var scale = maxScale
+        
+        if distanceToCurrent > 0 {
+            scale = minScale + dragDistance / pageWidth * (maxScale - minScale)
+        } else {
+            scale = maxScale - dragDistance / pageWidth * (maxScale - minScale)
+        }
+        
+        return scale
     }
 }
 
