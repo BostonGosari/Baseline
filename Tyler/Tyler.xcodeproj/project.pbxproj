@@ -259,7 +259,6 @@
 				F001E65A2ACF53F80002F665 /* CardDetailView.swift in Sources */,
 				F001E65F2ACF87DA0002F665 /* ButtonStyles.swift in Sources */,
 				F001E6562ACF23E60002F665 /* HeroAnimationView.swift in Sources */,
-				F013F3BC2ACE96FB00423AFF /* TylerApp.swift in Sources */,
 				F001E65D2ACF59CF0002F665 /* Animations.swift in Sources */,
 				F013F4182ACF025900423AFF /* RoundCorner.swift in Sources */,
 				F001E6582ACF52660002F665 /* CardView.swift in Sources */,
