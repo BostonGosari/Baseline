@@ -10,12 +10,16 @@ import MapKit
 import SwiftUI
 
 struct MapView: UIViewRepresentable {
-    @State private var userLocations: [CLLocationCoordinate2D] = []
+    @State private var userLocations: [CLLocationCoordinate2D] = [
+       
+    ]
+    
     @Binding var isTracking: Bool
     @Binding var locationManager: CLLocationManager
     
+    let mapView = MKMapView()
+    
     func makeUIView(context: Context) -> MKMapView {
-        let mapView = MKMapView()
         mapView.delegate = context.coordinator
         mapView.showsUserLocation = true
         
@@ -25,12 +29,6 @@ struct MapView: UIViewRepresentable {
     }
     
     func updateUIView(_ uiView: MKMapView, context: Context) {
-        if isTracking {
-            uiView.userTrackingMode = .follow
-        } else {
-            uiView.userTrackingMode = .none
-        }
-        
         uiView.removeOverlays(uiView.overlays)
         
         if !userLocations.isEmpty {
@@ -48,6 +46,17 @@ struct MapView: UIViewRepresentable {
         
         init(_ parent: MapView) {
             self.parent = parent
+        }
+        
+        func mapViewDidFinishLoadingMap(_ mapView: MKMapView) {
+            if let userLocation = mapView.userLocation.location {
+                let region = MKCoordinateRegion(
+                    center: userLocation.coordinate,
+                    latitudinalMeters: 500,
+                    longitudinalMeters: 500
+                )
+                mapView.setRegion(region, animated: true)
+            }
         }
         
         func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
