@@ -54,7 +54,8 @@ struct Confetti: View {
     @State var finishedAnimationCounter = 0
     @State var firstAppear = false
     @State var error = ""
-
+    
+    /// 초기 Confetti Setting
     init(counter:Binding<Int>,
          num:Int = 20,
          confettis:[ConfettiType] = ConfettiType.allCases,

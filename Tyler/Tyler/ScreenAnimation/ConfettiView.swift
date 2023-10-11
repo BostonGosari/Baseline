@@ -29,12 +29,14 @@ struct ConfettiView: View {
             ///   - repetitions: 반복 횟수
             ///   - repetitionInterval: 반복 시간
             Confetti(counter: $counter,
-//                     confettis: [.text("hello")],
-                     colors: [.blue, .yellow, .orange, .purple, .pink],
+                     num: 20,
+//                     confettis: [.text("outline"), .text("boston"), .text("gosari")],
                      confettiSize: 10,
-                     openingAngle: .degrees(50),
-                     closingAngle: .degrees(130),
-                     radius: 400)
+                     openingAngle: .degrees(60),
+                     closingAngle: .degrees(120),
+                     radius: 400,
+                     repetitions: 4,
+                     repetitionInterval: 0.5)
             Button("Confetti") {
                 counter += 1
             }
