@@ -10,9 +10,7 @@ import MapKit
 import SwiftUI
 
 struct MapView: UIViewRepresentable {
-    @State private var userLocations: [CLLocationCoordinate2D] = [
-       
-    ]
+    @State private var userLocations: [CLLocationCoordinate2D] = []
     
     @Binding var isTracking: Bool
     @Binding var locationManager: CLLocationManager

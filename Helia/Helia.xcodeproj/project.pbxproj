@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0EF9A9D02AD57B6D006154B6 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF9A9CF2AD57B6D006154B6 /* MapView.swift */; };
+		0EF9A9D32AD5A1D8006154B6 /* UserPathView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF9A9D22AD5A1D8006154B6 /* UserPathView.swift */; };
+		0EF9A9D72AD5A391006154B6 /* PathCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF9A9D62AD5A391006154B6 /* PathCustomView.swift */; };
 		F013F40A2ACE977300423AFF /* HeliaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F013F4092ACE977300423AFF /* HeliaApp.swift */; };
 		F013F40C2ACE977300423AFF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F013F40B2ACE977300423AFF /* ContentView.swift */; };
 		F013F40E2ACE977500423AFF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F013F40D2ACE977500423AFF /* Assets.xcassets */; };
@@ -16,7 +18,8 @@
 
 /* Begin PBXFileReference section */
 		0EF9A9CF2AD57B6D006154B6 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
-		0EF9A9D12AD57F38006154B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		0EF9A9D22AD5A1D8006154B6 /* UserPathView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPathView.swift; sourceTree = "<group>"; };
+		0EF9A9D62AD5A391006154B6 /* PathCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathCustomView.swift; sourceTree = "<group>"; };
 		F013F4062ACE977300423AFF /* Helia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Helia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F013F4092ACE977300423AFF /* HeliaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeliaApp.swift; sourceTree = "<group>"; };
 		F013F40B2ACE977300423AFF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -54,12 +57,13 @@
 		F013F4082ACE977300423AFF /* Helia */ = {
 			isa = PBXGroup;
 			children = (
-				0EF9A9D12AD57F38006154B6 /* Info.plist */,
 				F013F4092ACE977300423AFF /* HeliaApp.swift */,
 				F013F40B2ACE977300423AFF /* ContentView.swift */,
 				F013F40D2ACE977500423AFF /* Assets.xcassets */,
 				F013F40F2ACE977500423AFF /* Preview Content */,
 				0EF9A9CF2AD57B6D006154B6 /* MapView.swift */,
+				0EF9A9D22AD5A1D8006154B6 /* UserPathView.swift */,
+				0EF9A9D62AD5A391006154B6 /* PathCustomView.swift */,
 			);
 			path = Helia;
 			sourceTree = "<group>";
@@ -142,9 +146,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0EF9A9D32AD5A1D8006154B6 /* UserPathView.swift in Sources */,
 				F013F40C2ACE977300423AFF /* ContentView.swift in Sources */,
 				0EF9A9D02AD57B6D006154B6 /* MapView.swift in Sources */,
 				F013F40A2ACE977300423AFF /* HeliaApp.swift in Sources */,
+				0EF9A9D72AD5A391006154B6 /* PathCustomView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,7 +288,6 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Helia/Info.plist;
-				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "사용자의 위치를 받아오려고 합니다.";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "사용자의 위치를 받아옵니다.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -314,7 +319,6 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Helia/Info.plist;
-				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "사용자의 위치를 받아오려고 합니다.";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "사용자의 위치를 받아옵니다.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
