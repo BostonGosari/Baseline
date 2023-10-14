@@ -23,7 +23,51 @@
 		F0AF3C4F2AD64E4300F4F69D /* ConfettiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AF3C4E2AD64E4300F4F69D /* ConfettiView.swift */; };
 		F0AF3C562AD64F2F00F4F69D /* Confetti.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AF3C512AD64F2E00F4F69D /* Confetti.swift */; };
 		F0AF3C5A2AD64F2F00F4F69D /* Shapes.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AF3C552AD64F2F00F4F69D /* Shapes.swift */; };
+		F05A8E472AD55D8200898431 /* WatchTylerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05A8E462AD55D8200898431 /* WatchTylerApp.swift */; };
+		F05A8E492AD55D8200898431 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05A8E482AD55D8200898431 /* ContentView.swift */; };
+		F05A8E4B2AD55D8400898431 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F05A8E4A2AD55D8400898431 /* Assets.xcassets */; };
+		F05A8E4E2AD55D8400898431 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F05A8E4D2AD55D8400898431 /* Preview Assets.xcassets */; };
+		F05A8E512AD55D8400898431 /* WatchTyler Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = F05A8E442AD55D8200898431 /* WatchTyler Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		F05A8E582AD55E7000898431 /* WatchConnectivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05A8E572AD55E7000898431 /* WatchConnectivityView.swift */; };
+		F05A8E5B2AD5609300898431 /* WatchConnectivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05A8E5A2AD5609300898431 /* WatchConnectivityView.swift */; };
+		F05A8E5D2AD56CC100898431 /* DeviceCommunicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05A8E5C2AD56CC100898431 /* DeviceCommunicator.swift */; };
+		F05A8E5E2AD56CD400898431 /* DeviceCommunicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05A8E5C2AD56CC100898431 /* DeviceCommunicator.swift */; };
+		F0CE54132AD2E3C500662E62 /* MapView_iOS16.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0CE54122AD2E3C500662E62 /* MapView_iOS16.swift */; };
+		F0CE54152AD30FF700662E62 /* MapView_iOS17.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0CE54142AD30FF600662E62 /* MapView_iOS17.swift */; };
+		F0CE541B2AD33BAB00662E62 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0CE541A2AD33BAB00662E62 /* MapView.swift */; };
+		F0CE541D2AD33BC100662E62 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0CE541C2AD33BC100662E62 /* MainView.swift */; };
+		F0CE54202AD394A500662E62 /* MapUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0CE541F2AD394A500662E62 /* MapUserView.swift */; };
+		F0CE54222AD3F00600662E62 /* duckRun.kml in Resources */ = {isa = PBXBuildFile; fileRef = F0CE54212AD3F00600662E62 /* duckRun.kml */; };
+		F0CE54242AD3F46900662E62 /* KMLParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0CE54232AD3F46900662E62 /* KMLParser.swift */; };
+		F0CE54262AD3FD3300662E62 /* MapAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0CE54252AD3FD3300662E62 /* MapAnimationView.swift */; };
+		F05A8E632AD5BAE600898431 /* Carousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05A8E622AD5BAE600898431 /* Carousel.swift */; };
+		F0AF3C412AD5BD6600F4F69D /* CarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AF3C402AD5BD6600F4F69D /* CarouselView.swift */; };
+		F0AF3C472AD5E27200F4F69D /* CarouselView_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AF3C462AD5E27200F4F69D /* CarouselView_iOS.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F05A8E4F2AD55D8400898431 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F013F3B02ACE96FB00423AFF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F05A8E432AD55D8200898431;
+			remoteInfo = "WatchTyler Watch App";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		F05A8E522AD55D8400898431 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				F05A8E512AD55D8400898431 /* WatchTyler Watch App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		F001E6552ACF23E60002F665 /* HeroAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroAnimationView.swift; sourceTree = "<group>"; };
@@ -43,10 +87,36 @@
 		F0AF3C4E2AD64E4300F4F69D /* ConfettiView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfettiView.swift; sourceTree = "<group>"; };
 		F0AF3C512AD64F2E00F4F69D /* Confetti.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Confetti.swift; sourceTree = "<group>"; };
 		F0AF3C552AD64F2F00F4F69D /* Shapes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shapes.swift; sourceTree = "<group>"; };
+		F05A8E442AD55D8200898431 /* WatchTyler Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WatchTyler Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F05A8E462AD55D8200898431 /* WatchTylerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchTylerApp.swift; sourceTree = "<group>"; };
+		F05A8E482AD55D8200898431 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		F05A8E4A2AD55D8400898431 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F05A8E4D2AD55D8400898431 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		F05A8E572AD55E7000898431 /* WatchConnectivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchConnectivityView.swift; sourceTree = "<group>"; };
+		F05A8E5A2AD5609300898431 /* WatchConnectivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchConnectivityView.swift; sourceTree = "<group>"; };
+		F05A8E5C2AD56CC100898431 /* DeviceCommunicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceCommunicator.swift; sourceTree = "<group>"; };
+		F0CE54122AD2E3C500662E62 /* MapView_iOS16.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView_iOS16.swift; sourceTree = "<group>"; };
+		F0CE54142AD30FF600662E62 /* MapView_iOS17.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView_iOS17.swift; sourceTree = "<group>"; };
+		F0CE541A2AD33BAB00662E62 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		F0CE541C2AD33BC100662E62 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		F0CE541F2AD394A500662E62 /* MapUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapUserView.swift; sourceTree = "<group>"; };
+		F0CE54212AD3F00600662E62 /* duckRun.kml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = duckRun.kml; sourceTree = "<group>"; };
+		F0CE54232AD3F46900662E62 /* KMLParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KMLParser.swift; sourceTree = "<group>"; };
+		F0CE54252AD3FD3300662E62 /* MapAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapAnimationView.swift; sourceTree = "<group>"; };
+		F05A8E622AD5BAE600898431 /* Carousel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Carousel.swift; sourceTree = "<group>"; };
+		F0AF3C402AD5BD6600F4F69D /* CarouselView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselView.swift; sourceTree = "<group>"; };
+		F0AF3C462AD5E27200F4F69D /* CarouselView_iOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselView_iOS.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		F013F3B52ACE96FB00423AFF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F05A8E412AD55D8200898431 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -88,6 +158,7 @@
 			isa = PBXGroup;
 			children = (
 				F013F3BA2ACE96FB00423AFF /* Tyler */,
+				F05A8E452AD55D8200898431 /* WatchTyler Watch App */,
 				F013F3B92ACE96FB00423AFF /* Products */,
 			);
 			sourceTree = "<group>";
@@ -96,6 +167,7 @@
 			isa = PBXGroup;
 			children = (
 				F013F3B82ACE96FB00423AFF /* Tyler.app */,
+				F05A8E442AD55D8200898431 /* WatchTyler Watch App.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -106,6 +178,9 @@
 				F013F3BB2ACE96FB00423AFF /* TylerApp.swift */,
 				F013F3BD2ACE96FB00423AFF /* ContentView.swift */,
 				F0AF3C4D2AD64E1C00F4F69D /* ScreenAnimation */,
+				F05A8E562AD55E4E00898431 /* WatchConnectivity */,
+				F0CE54112AD2E3B600662E62 /* Map */,
+				F05A8E5F2AD5BABA00898431 /* Carousel */,
 				F001E6542ACF23D60002F665 /* HeroAnimation */,
 				F013F41B2ACF1E3B00423AFF /* RoundCorner */,
 				F001E6602AD0530F0002F665 /* ScrollViewOffset */,
@@ -151,6 +226,84 @@
 			path = Confetti;
 			sourceTree = "<group>";
 		};
+		F05A8E452AD55D8200898431 /* WatchTyler Watch App */ = {
+			isa = PBXGroup;
+			children = (
+				F05A8E462AD55D8200898431 /* WatchTylerApp.swift */,
+				F05A8E482AD55D8200898431 /* ContentView.swift */,
+				F05A8E592AD5607400898431 /* WatchConnectivity */,
+				F05A8E4A2AD55D8400898431 /* Assets.xcassets */,
+				F05A8E4C2AD55D8400898431 /* Preview Content */,
+			);
+			path = "WatchTyler Watch App";
+			sourceTree = "<group>";
+		};
+		F05A8E4C2AD55D8400898431 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				F05A8E4D2AD55D8400898431 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		F05A8E562AD55E4E00898431 /* WatchConnectivity */ = {
+			isa = PBXGroup;
+			children = (
+				F05A8E572AD55E7000898431 /* WatchConnectivityView.swift */,
+				F05A8E5C2AD56CC100898431 /* DeviceCommunicator.swift */,
+			);
+			path = WatchConnectivity;
+			sourceTree = "<group>";
+		};
+		F05A8E592AD5607400898431 /* WatchConnectivity */ = {
+			isa = PBXGroup;
+			children = (
+				F05A8E5A2AD5609300898431 /* WatchConnectivityView.swift */,
+			);
+			path = WatchConnectivity;
+			sourceTree = "<group>";
+		};
+		F0CE54112AD2E3B600662E62 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				F0CE541E2AD33BC400662E62 /* UIKit */,
+				F0CE54272AD405A500662E62 /* SwiftUI */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		F0CE541E2AD33BC400662E62 /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				F0CE541C2AD33BC100662E62 /* MainView.swift */,
+				F0CE541A2AD33BAB00662E62 /* MapView.swift */,
+				F0CE541F2AD394A500662E62 /* MapUserView.swift */,
+				F0CE54252AD3FD3300662E62 /* MapAnimationView.swift */,
+				F0CE54212AD3F00600662E62 /* duckRun.kml */,
+				F0CE54232AD3F46900662E62 /* KMLParser.swift */,
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
+		F0CE54272AD405A500662E62 /* SwiftUI */ = {
+			isa = PBXGroup;
+			children = (
+				F0CE54122AD2E3C500662E62 /* MapView_iOS16.swift */,
+				F0CE54142AD30FF600662E62 /* MapView_iOS17.swift */,
+			);
+			path = SwiftUI;
+			sourceTree = "<group>";
+		};
+		F05A8E5F2AD5BABA00898431 /* Carousel */ = {
+			isa = PBXGroup;
+			children = (
+				F05A8E622AD5BAE600898431 /* Carousel.swift */,
+				F0AF3C402AD5BD6600F4F69D /* CarouselView.swift */,
+				F0AF3C462AD5E27200F4F69D /* CarouselView_iOS.swift */,
+			);
+			path = Carousel;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -161,14 +314,33 @@
 				F013F3B42ACE96FB00423AFF /* Sources */,
 				F013F3B52ACE96FB00423AFF /* Frameworks */,
 				F013F3B62ACE96FB00423AFF /* Resources */,
+				F05A8E522AD55D8400898431 /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F05A8E502AD55D8400898431 /* PBXTargetDependency */,
+			);
+			name = Tyler;
+			productName = Tyler;
+			productReference = F013F3B82ACE96FB00423AFF /* Tyler.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F05A8E432AD55D8200898431 /* WatchTyler Watch App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F05A8E552AD55D8400898431 /* Build configuration list for PBXNativeTarget "WatchTyler Watch App" */;
+			buildPhases = (
+				F05A8E402AD55D8200898431 /* Sources */,
+				F05A8E412AD55D8200898431 /* Frameworks */,
+				F05A8E422AD55D8200898431 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = Tyler;
-			productName = Tyler;
-			productReference = F013F3B82ACE96FB00423AFF /* Tyler.app */;
+			name = "WatchTyler Watch App";
+			productName = "WatchTyler Watch App";
+			productReference = F05A8E442AD55D8200898431 /* WatchTyler Watch App.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -184,15 +356,19 @@
 					F013F3B72ACE96FB00423AFF = {
 						CreatedOnToolsVersion = 15.0;
 					};
+					F05A8E432AD55D8200898431 = {
+						CreatedOnToolsVersion = 15.0;
+					};
 				};
 			};
 			buildConfigurationList = F013F3B32ACE96FB00423AFF /* Build configuration list for PBXProject "Tyler" */;
 			compatibilityVersion = "Xcode 14.0";
-			developmentRegion = en;
+			developmentRegion = ko;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
+				ko,
 			);
 			mainGroup = F013F3AF2ACE96FB00423AFF;
 			productRefGroup = F013F3B92ACE96FB00423AFF /* Products */;
@@ -200,6 +376,7 @@
 			projectRoot = "";
 			targets = (
 				F013F3B72ACE96FB00423AFF /* Tyler */,
+				F05A8E432AD55D8200898431 /* WatchTyler Watch App */,
 			);
 		};
 /* End PBXProject section */
@@ -209,8 +386,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0CE54222AD3F00600662E62 /* duckRun.kml in Resources */,
 				F013F3C32ACE96FE00423AFF /* Preview Assets.xcassets in Resources */,
 				F013F3C02ACE96FE00423AFF /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F05A8E422AD55D8200898431 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F05A8E4E2AD55D8400898431 /* Preview Assets.xcassets in Resources */,
+				F05A8E4B2AD55D8400898431 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -223,13 +410,26 @@
 			files = (
 				F0AF3C4F2AD64E4300F4F69D /* ConfettiView.swift in Sources */,
 				F013F3BE2ACE96FB00423AFF /* ContentView.swift in Sources */,
+				F05A8E5D2AD56CC100898431 /* DeviceCommunicator.swift in Sources */,
+				F0CE54132AD2E3C500662E62 /* MapView_iOS16.swift in Sources */,
+				F0CE541B2AD33BAB00662E62 /* MapView.swift in Sources */,
+				F0CE54242AD3F46900662E62 /* KMLParser.swift in Sources */,
+				F0CE54202AD394A500662E62 /* MapUserView.swift in Sources */,
+				F0CE541D2AD33BC100662E62 /* MainView.swift in Sources */,
+				F013F3BC2ACE96FB00423AFF /* TylerApp.swift in Sources */,
+				F0CE54262AD3FD3300662E62 /* MapAnimationView.swift in Sources */,
+				F0CE54152AD30FF700662E62 /* MapView_iOS17.swift in Sources */,
 				F013F41A2ACF054F00423AFF /* Tyler.docc in Sources */,
 				F0AF3C562AD64F2F00F4F69D /* Confetti.swift in Sources */,
+				F05A8E632AD5BAE600898431 /* Carousel.swift in Sources */,
 				F001E65A2ACF53F80002F665 /* CardDetailView.swift in Sources */,
+				F05A8E582AD55E7000898431 /* WatchConnectivityView.swift in Sources */,
 				F001E65F2ACF87DA0002F665 /* ButtonStyles.swift in Sources */,
 				F001E6562ACF23E60002F665 /* HeroAnimationView.swift in Sources */,
 				F0AF3C5A2AD64F2F00F4F69D /* Shapes.swift in Sources */,
+				F0AF3C412AD5BD6600F4F69D /* CarouselView.swift in Sources */,
 				F013F3BC2ACE96FB00423AFF /* TylerApp.swift in Sources */,
+				F0AF3C472AD5E27200F4F69D /* CarouselView_iOS.swift in Sources */,
 				F001E65D2ACF59CF0002F665 /* Animations.swift in Sources */,
 				F013F4182ACF025900423AFF /* RoundCorner.swift in Sources */,
 				F001E6582ACF52660002F665 /* CardView.swift in Sources */,
@@ -238,7 +438,26 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F05A8E402AD55D8200898431 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F05A8E5E2AD56CD400898431 /* DeviceCommunicator.swift in Sources */,
+				F05A8E5B2AD5609300898431 /* WatchConnectivityView.swift in Sources */,
+				F05A8E492AD55D8200898431 /* ContentView.swift in Sources */,
+				F05A8E472AD55D8200898431 /* WatchTylerApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F05A8E502AD55D8400898431 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F05A8E432AD55D8200898431 /* WatchTyler Watch App */;
+			targetProxy = F05A8E4F2AD55D8400898431 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		F013F3C42ACE96FE00423AFF /* Debug */ = {
@@ -293,7 +512,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -350,7 +569,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -363,6 +582,7 @@
 		F013F3C72ACE96FE00423AFF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -372,6 +592,8 @@
 				DOCC_HOSTING_BASE_PATH = Baseline;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "사용자의 위치정보를 가져오려고 합니다.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "사용자의 위치정보를 가져오려고 합니다.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -394,6 +616,7 @@
 		F013F3C82ACE96FE00423AFF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -403,6 +626,8 @@
 				DOCC_HOSTING_BASE_PATH = Baseline;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "사용자의 위치정보를 가져오려고 합니다.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "사용자의 위치정보를 가져오려고 합니다.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -419,6 +644,66 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		F05A8E532AD55D8400898431 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"WatchTyler Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = 77745NX67K;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = WatchTyler;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.hyunjun.Tyler;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hyunjun.Tyler.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 9.6;
+			};
+			name = Debug;
+		};
+		F05A8E542AD55D8400898431 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"WatchTyler Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = 77745NX67K;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = WatchTyler;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.hyunjun.Tyler;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hyunjun.Tyler.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 9.6;
 			};
 			name = Release;
 		};
@@ -439,6 +724,15 @@
 			buildConfigurations = (
 				F013F3C72ACE96FE00423AFF /* Debug */,
 				F013F3C82ACE96FE00423AFF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F05A8E552AD55D8400898431 /* Build configuration list for PBXNativeTarget "WatchTyler Watch App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F05A8E532AD55D8400898431 /* Debug */,
+				F05A8E542AD55D8400898431 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
